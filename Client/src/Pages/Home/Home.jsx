@@ -1,11 +1,14 @@
-import { FeaturedCard, Header, Footer } from "../../Components/Index"
+import { Topbar, FeaturedCard, Header, Footer } from "../../Component/Index"
 
 const Home = () => {
   return (
     <> 
     <Header />
-      <FeaturedCard />
-    <Footer />
+    <Topbar />
+    <FeaturedCard />
+    <Footer /> 
+
+
     </>
   )
 }

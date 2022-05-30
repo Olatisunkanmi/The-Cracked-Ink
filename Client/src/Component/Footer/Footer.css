@@ -1,0 +1,94 @@
+.footer-container{
+    background-color: #1c2027;
+    color:  rgb(255, 255, 255);
+    /* display: flex; */
+    
+}
+
+.row{
+    display: flex;
+    justify-content: center;
+}
+
+
+.footer--tags, .footer--Cats, .footer--Sub{
+ margin-bottom: 40px;
+ border-top: 1.5px rgb(255, 253, 253) solid;
+  padding-right: 100px;
+  margin-top: 40px;
+}
+
+.footer--heads{
+    padding-top: 10px;
+    font-size: 17.3px;
+    font-family: Georgia,serif;
+    color: rgb(243, 236, 236);
+}
+
+
+.footer--tags{
+    margin-right: 40px;
+}
+
+.Tags--list-div{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 7px;
+    width: 150px;
+  
+}
+
+.tags-list{
+    padding: 5px;
+    border-radius: 12px;
+    margin: 4px;
+    border:  1.5px rgb(241, 236, 236) solid;
+    cursor: pointer;
+}
+
+.tags-list:hover{
+    background-color: rgb(241, 236, 236);
+    
+}
+
+.footer--Sub{
+    margin-left: 40px;
+    margin-right: 40px;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.footer--noti, .search--bar, .footer--subscribe{
+    margin-top: 15px;
+}
+
+.search--bar{
+    height: 24px;
+}
+
+
+.footer--subscribe{
+    padding: 10px;
+    border-radius: 15px;
+}
+
+.footer--Cats{
+    margin-left: 50px;
+}
+
+.copyright{
+    display: flex;
+    justify-content: center;
+   
+    border-top: 1.5px rgb(255, 253, 253) solid;
+    padding-top: 20px;
+    height: 50px;
+    color: rgb(231, 214, 214);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: larger;
+    cursor: pointer;
+}
+
+
+
