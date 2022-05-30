@@ -1,6 +1,6 @@
 import { Topbar, FeaturedCard, Header, Footer } from "../../Component/Index"
 
-const Home = () => {
+const Tech = () => {
   return (
     <> 
     <Header />
@@ -13,4 +13,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default Tech
