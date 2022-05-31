@@ -12,11 +12,11 @@ function App() {
     <BrowserRouter >   
         <Routes> 
         <Route exact path='/' element={<About />} />
-        <Route  path='/write' element={<Write />} /> 
-        <Route  path='/write/:postId' element={<Post />} /> 
-        <Route  path='/tech' element={<Tech />} /> 
-        <Route  path='/tech/:techId' element={<Post />} /> 
-
+        <Route  path='/creative-texts' element={<Write />} /> 
+        <Route  path='/creative-texts/:postId' element={<Post />} /> 
+        <Route  path='/tech-articles' element={<Tech />} /> 
+        <Route  path='/tech-articles/:postId' element={<Post />} /> 
+        <Route  path='/edit' element={<Login />} /> 
         <Route  path='/login' element={<Login />} /> 
 
        </Routes>
