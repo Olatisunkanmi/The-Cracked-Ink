@@ -2,21 +2,14 @@ const express = require('express');
 const dotenv = require('dotenv');
 const mongoose = require('mongoose');
 const { response } = require('express');
-const authRoute = require("./routes/auth");
+const AUTHROUTE = require("./routes/auth");
+const USERLOGIN = require("./routes/users");
 const app = express();
 
 dotenv.config();
 app.use(express.json());
 
 // Connect to mongodb in the .env files.
-
-// mongoose.connect('mongodb+srv://Admin:admin@cluster0.yiiq925.mongodb.net/?retryWrites=true&w=majority', {
-//         useNewUrlParser: true,
-//         useUnifiedTopology: true
-      
-
-// })
-
 const t1 = new Date();
 
 const before =  Date.now;
@@ -28,11 +21,17 @@ const main = async () => {
 }
 main() .catch(err => console.log(err));
 const t2 = new Date();
-console.log(`${t2-t1} Secs`);
+console.log(`${t2-t1} MSecs`);
+
+
+
 // .then(response, () => {console.log('Mongo Works')})
 // .catch(err =>  console.log(`Not working ${err}`) )
 
-app.use("/user/auth", authRoute); 
+// Creating all users Routes 
+
+app.use("/user/auth", AUTHROUTE); 
+app.use("/user/login", USERLOGIN); 
 
 app.listen("5000", () => {
     console.log('Node is listening ');
