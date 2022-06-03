@@ -7,22 +7,32 @@ const Post = require('../models/Post');
 const router = express.Router();
 
 
+
+
 // Create Post 
 // we use this method when we edit existing data in our database.
 
 router.post("/", async (req, res ) => { 
-    console.log(req.body)
+    // console.log(req.body)
+                                // creating a new Post from the POST DB 
+                                const newPost = new PostDB (req.body)
+                                try {
+                                        await newPost.save();
+                                        res.status(201).json(newPost);
+                                        console.log('Post Created');
 
-    // creating a new Post from the POST DB 
-    const newPost = new PostDB (req.body)
-    try {
-            await newPost.save();
-            res.status(201).json(newPost);
-            console.log('Post Created');
+                                } catch (error) {
+                                        res.status(401).json(error)
+                                }   
+        
+                          
+    // } catch (error) {
+    //     res.status(500).json(error)
+    //     console.log('err 3');
+    // }
 
-    } catch (error) {
-            res.status(401).json(error)
-    }   
+
+   
             
 })
 
@@ -66,7 +76,7 @@ res.status(401).json('You can only update your post')
 })
 
 
-// Get a post details 
+// Get a post details by id 
 
 router.get(('/:id'),  async (req, res) => {
     try {
@@ -88,7 +98,7 @@ router.get("/", async (req, res ) => {
         if(username){
             posts = await PostDB.find({username})
 
-
+            console.log(`${username} check`)
             // Find Categories 
         }else if (catName) {
             posts = await PostDB.find({categories: {
