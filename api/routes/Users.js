@@ -101,4 +101,10 @@ router.get("/:id", async (req, res ) => {
 })
 
 
+// Get all users as Admin 
+// router.get('/all', async (req, res ) => ){
+
+// }
+
+
 module.exports = router;

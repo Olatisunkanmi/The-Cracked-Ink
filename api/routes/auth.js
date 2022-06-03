@@ -31,7 +31,7 @@ router.post("/register", async (req, res) => {
      
 
         await newUser.save();
-        res.status(200).json(newUser);
+        res.status(201).json(newUser);
         console.log('User Created ')
 
 

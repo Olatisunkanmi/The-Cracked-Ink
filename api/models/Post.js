@@ -1,6 +1,12 @@
 const mongoose = require('mongoose');
 
 const PostSchema = new mongoose.Schema ({
+
+    username:{
+        type:String,
+        required:true,
+        unique: false,
+    },
     title:{
         type:String,
         required:true,
@@ -14,6 +20,7 @@ const PostSchema = new mongoose.Schema ({
         type:String,
         required: false,
     },
+  
     categories:{
         type:Array,
         required:true

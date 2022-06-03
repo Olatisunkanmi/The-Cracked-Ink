@@ -1,5 +1,4 @@
 import './About.css';
-
 import {Header } from '../../Component/Index';
 import profileImage from '../../Assests/sk.jpg';
 import {Facebook, GitHub, Instagram, LinkedIn, Twitter } from '@material-ui/icons'
