@@ -31,21 +31,21 @@ console.log(`${t2-t1} MSecs`);
 
 const storage  =  multer.diskStorage({
   destination:  (req, file, cb ) => {
-      cb(null, 'images');  
+      cb(null, "images");  
   },
   
   filename: (req, file ,cb ) => {
-      cb (null , req.body.name)
-  }
+      cb (null , "hello.jpeg")
+  },
 });
 
 // Upload: fn for uploading files
 
-const upload = multer({storage: storage });
-
-app.post("/user/upload", upload.single ("file "), (req, res ) => {
-  res.status(200).json('File Uploaded')
+const upload = multer({ storage: storage });
+app.post("/user/upload", upload.single ("file"),  (req, res ) => {
+  res.status(200).json('File Uploaded') 
 })
+
 
 
 
