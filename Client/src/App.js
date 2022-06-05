@@ -2,9 +2,8 @@ import {Write, Post, About, Login, Tech} from './Component/Index'
 import { BrowserRouter, Routes, Route, } from "react-router-dom";
 
 
-
 function App() {
-
+  
   return (
 
    
@@ -15,7 +14,8 @@ function App() {
         <Route  path='/creative-texts/:postId' element={<Post />} /> 
         <Route  path='/tech-articles' element={<Tech />} /> 
         <Route  path='/tech-articles/:postId' element={<Post />} /> 
-        <Route  path='/edit' element={<Login />} /> 
+        <Route  path='/edit' element={<Write />} /> 
+  
         <Route  path='/login' element={<Login />} /> 
 
        </Routes>
