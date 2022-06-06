@@ -6,14 +6,17 @@ import { useState } from "react"
 
 
 export default function Write () {
-  const [post, setPosts ] = useState([]);
+  const [posts, setPosts ] = useState([]);
 
   useEffect(() => {
       const fetchPosts =  async () => {
            try {
+              const res = await axios.get('http://localhost:5000/api/posts');
+                        console.log(res.data);
 
-              const response = await axios.get('http://localhost:5000/api/posts');
-                        console.log(response);
+                        // setting post to the newdata received from the /api
+                        setPosts(res.data)
+
            } catch (error) {
               console.log(error);
            }
@@ -26,8 +29,8 @@ export default function Write () {
         <div>
 
     <Header />
-    <Topbar /> 
-    <FirstCard />
+    <Topbar  /> 
+    <FirstCard posts={posts}/>
     <FeaturedCard />
     <Footer /> 
 
