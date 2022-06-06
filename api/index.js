@@ -7,7 +7,18 @@ const USERLOGIN = require("./routes/users");
 const POSTCREATE = require("./routes/Posts")
 const CATCREATE = require("./routes/Categories")
 const multer = require('multer');
+const cors = require('cors');
 const app = express();
+
+app.use(
+    cors({
+       origin: "http://localhost:3000",
+       optionsSuccessStatus: 200
+})
+
+)
+
+
 
 dotenv.config();
 app.use(express.json());
@@ -16,7 +27,10 @@ app.use(express.json());
 const t1 = new Date();
 
 const main = async () => {
-  await mongoose.connect(process.env.MONGO_URL)
+  await mongoose.connect(process.env.MONGO_URL, {
+    
+  })
+
   .then(console.log('Mongo'))
 
 
@@ -56,11 +70,11 @@ app.post("/user/upload", upload.single ("file"),  (req, res ) => {
 
 // Creating all users Routes 
 
-app.use("/user/auth", AUTHROUTE); 
-app.use("/user/login", USERLOGIN); 
-app.use("/user/posts", POSTCREATE); 
-app.use("/user/category", CATCREATE); 
+app.use("/api/auth", AUTHROUTE); 
+app.use("/api/login", USERLOGIN); 
+app.use("/api/posts", POSTCREATE); 
+app.use("/api/category", CATCREATE); 
 
 app.listen("5000", () => {
-    console.log('Node is listening ');
+    console.log('Node is listening on Port 5000');
 })

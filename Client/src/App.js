@@ -3,17 +3,15 @@ import { BrowserRouter, Routes, Route, } from "react-router-dom";
 
 
 function App() {
-  
-  return (
 
+
+  return (
    
     <BrowserRouter >   
         <Routes> 
         <Route exact path='/' element={<About />} />
-        <Route  path='/creative-texts' element={<Write />} /> 
-        <Route  path='/creative-texts/:postId' element={<Post />} /> 
-        <Route  path='/tech-articles' element={<Tech />} /> 
-        <Route  path='/tech-articles/:postId' element={<Post />} /> 
+        <Route  path='/posts' element={<Write />} /> 
+        <Route  path='/posts/:postId' element={<Post />} /> 
         <Route  path='/edit' element={<Write />} /> 
   
         <Route  path='/login' element={<Login />} /> 
