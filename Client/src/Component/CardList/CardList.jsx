@@ -2,32 +2,34 @@ import './CardList.css';
 import gamble from "../../Assests/gamble.jpg";
  
 
-const CardList = () => {
+const CardList = ({post} ) => {
   return (
       <>
-      
       
     <div className='CardList'>
   
    
-  <img src={gamble} alt="this is your picture"  className='CardImg'/>
+  <img src={post.photo} alt="this is your picture"  className='CardImg'/>
     
     
 
 
       <div className="CardInfo">
-           <span className="CardTitle">The Tales we never told</span>
+           <span className="CardTitle">
+              {post.title}
+           </span>
           <div className='CardList--date--cat'>
-          <span className="CardDate">Sept. Date</span>
-          <span className="CardCat">Music</span>
-          <span className="CardCat">Lifestyle</span>
-          </div>
+          <span className="CardDate">{new Date(post.createdAt).toDateString() }</span>
 
-          <span className="CardDesc">Lorem ipsum, dolor sit amet con
-          sectetur adipisicing elit. Nostrum id nulla suscipit alias t
-          enetur magnam nisi, incidunt accusamus dolor voluptatibus at r
-          em ea aperiam voluptate sunt?
-          Autem perspiciatis itaque quibusdam.</span>
+                    <div className="CardCat">
+                    <span> {post.categories}</span>
+                    </div>
+          </div>
+    
+
+          <span className="CardDesc">
+              {post.desc}
+          </span>
           <button className='cardBtn'> Read More </button>
       </div>
 

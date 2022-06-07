@@ -30,8 +30,8 @@ export default function Write () {
 
     <Header />
     <Topbar  /> 
-    <FirstCard posts={posts}/>
-    <FeaturedCard />
+    <FirstCard />
+    <FeaturedCard posts={posts}/>
     <Footer /> 
 
         </div>
