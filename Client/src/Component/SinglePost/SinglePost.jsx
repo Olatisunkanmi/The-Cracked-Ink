@@ -1,18 +1,39 @@
 import './SinglePost.css';
 import  love from '../../Assests/love.jpg';
 import { CardList } from '../Index';
+import { useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
+import axios from 'axios';
+import { useState } from 'react';
 // import { Comment, MenuBook, Person, Timer } from '@material-ui/icons';
 
 const SinglePost = () => {
+  
+  // getting the Id of the post
+  const location = useLocation().pathname.split('/')[2]
+  console.log(location);
+  const [post, setPost ] = useState ({})
+
+  useEffect(() => {
+      const getDetails = async () => {
+          const res = await axios.get(`/posts/${location}`);    
+
+          console.log(res.data);
+          setPost(res.data);
+      };
+      getDetails();  
+  }, [location])
+
+
   return (
     <> 
         <div className="post--container">
 
                     
               <div className='img--tag--div'>
-                  <img src={love} alt="post for picture" className='post--img'/>
+                  <img src={post.photo} alt="" className='post--img'/>
   
-                   <p className='post--title'>If You Ever Find love, like my Grandma Did </p>
+                   <p className='post--title'> {post.title} </p>
   
              
               </div>
@@ -21,14 +42,15 @@ const SinglePost = () => {
             <div className="post--content-div">
 
                 
-            
+               
             <div className='post--cat'>
-           <p> Lifestyle</p>
+           <p> {post.categories} </p>
             </div>
 
             <div className='post--auth--date--com'>
-            <p className='post--author'> Will James </p>
-             <p className='post--date'> Sept, 9 2019 </p> 
+            <p className='post--author'> {post.username}</p>
+             <p className='post--date'>
+             {new Date(post.createdAt).toDateString() }</p> 
                 
               
             </div>
@@ -40,9 +62,7 @@ const SinglePost = () => {
                     Integer eu odio tellus. Proin et gravida dolor, sed ultricies arcu. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Maecenas at ligula ante. Duis at ex gravida, condimentum risus non, pretium turpis. Morbi sollicitudin dui id scelerisque accumsan. Etiam auctor quam elementum orci sodales aliquet. Morbi quis aliquam neque. Cras dapibus vehicula vulputate. Pellentesque eget est sit amet quam malesuada mattis quis non risus.
 
                     Vivamus sem ante, luctus id ipsum id, sollicitudin feugiat eros. Nulla commodo auctor ex, eleifend egestas nulla imperdiet in. Vestibulum sit amet dui non mi scelerisque congue. Vivamus tempus dignissim ipsum sed consequat. Pellentesque fringilla sit amet eros quis tristique. Cras finibus malesuada nibh id tempor. Vestibulum non erat eu turpis blandit placerat. Ut sollicitudin auctor tortor a viverra. Praesent vulputate nisi id leo rutrum, id elementum eros tristique. Nullam arcu ante, dapibus ut semper sollicitudin, pretium a purus. Donec condimentum posuere interdum. Sed laoreet ante eu est faucibus, id placerat massa tempus. Quisque maximus leo eu ex ullamcorper, vitae blandit nisl vulputate. Proin egestas elit sit amet enim convallis dapibus ut ac ligula. Donec pulvinar purus non justo auctor, in scelerisque nibh lacinia. Maecenas eu justo non erat placerat pharetra.
-                    <br /> <br />
-                    Vivamus sem ante, luctus id ipsum id, sollicitudin feugiat eros. Nulla commodo auctor ex, eleifend egestas nulla imperdiet in. Vestibulum sit amet dui non mi scelerisque congue. Vivamus tempus dignissim ipsum sed consequat. Pellentesque fringilla sit amet eros quis tristique. Cras finibus malesuada nibh id tempor. Vestibulum non erat eu turpis blandit placerat. Ut sollicitudin auctor tortor a viverra. Praesent vulputate nisi id leo rutrum, id elementum eros tristique. Nullam arcu ante, dapibus ut semper sollicitudin, pretium a purus. Donec condimentum posuere interdum. Sed laoreet ante eu est faucibus, id placerat massa tempus. Quisque maximus leo eu ex ullamcorper, vitae blandit nisl vulputate. Proin egestas elit sit amet enim convallis dapibus ut ac ligula. Donec pulvinar purus non justo auctor, in scelerisque nibh lacinia. Maecenas eu justo non erat placerat pharetra.
-
+                   
 
                     </p>
                     
@@ -52,7 +72,7 @@ const SinglePost = () => {
 
             <div className="post--comment--div">
                 <h3 className='post--comment--header'>Leave a Reply</h3>
-                <p>Your Email will not be published. Required Fields are marked*</p>
+                <p>Your Email will not be published. Required Fields are marked <span> * </span></p>
                 
                 <div className='post--comment-input'>
                 <input type="text" id="" placeholder='Your Name' className='comment--name'/>
@@ -66,12 +86,12 @@ const SinglePost = () => {
                 <button className='post--comment--btn'> Submit </button>
             </div>    
             
-            
-            <h3 className="Recent--posts"> Recent Post </h3>
-            <CardList />
-            <CardList />
-            <CardList />
-
+            {
+            // <h3 className="Recent--posts"> Recent Post </h3>
+            // <CardList />
+            // <CardList />
+            // <CardList />
+}
 
         </div>
     </>
