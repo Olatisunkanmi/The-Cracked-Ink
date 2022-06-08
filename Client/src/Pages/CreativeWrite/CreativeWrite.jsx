@@ -14,11 +14,14 @@ export default function CreativeWrite () {
       const fetchPosts =  async () => {
            try {
               const res = await axios.get('/posts');
-                    
-                        // setting post to the newdata received from the /api
-                        setPosts(res.data)
-
                         console.log(res.data);
+
+              // getting the last post to send to <FeaturedPost />
+              const newPost =  res.data[res.data.length - 1]
+
+              console.log(newPost);
+            // setting post to the newdata received from the /api
+            setPosts(res.data)
            } catch (error) {
               console.log(error);
            }
