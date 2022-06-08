@@ -1,10 +1,27 @@
 import './CardList.css';
 import {Link } from "react-router-dom"
 import gamble from "../../Assests/gamble.jpg";
+import { useState } from 'react';
+import { useEffect } from 'react';
  
 
 const CardList = ({post} ) => {
-    console.log(post);
+    // console.log(post);
+
+    const [randomPosts, setRandomPosts] = useState([])
+
+    useEffect(() => {
+      const getrandomPosts = async => {
+            try {
+              
+            } catch (error) {
+                console.log(error);
+            }
+            getrandomPosts()
+      }
+    })
+
+    
   return (
       <>
       

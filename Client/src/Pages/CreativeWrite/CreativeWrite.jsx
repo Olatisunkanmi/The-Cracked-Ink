@@ -14,7 +14,12 @@ const [newPost, setNewPosts ] =  useState([])
       const fetchPosts =  async () => {
            try {
               const res = await axios.get('/posts');
-                        console.log(res.data);
+                        // console.log(res.data);
+                          const  newData =  res.data;
+
+                const getrandomPosts = newData[Math.floor( Math.random() * newData.length) ];
+                  console.log(getrandomPosts);
+
                           setPosts(res.data)
 
                           try {
@@ -22,7 +27,7 @@ const [newPost, setNewPosts ] =  useState([])
                                 // getting the last post to send to <FeaturedPost />
                               const newPost =  res.data[res.data.length - 1];
 
-                              console.log(newPost);
+                              // console.log(newPost);
                               setNewPosts(newPost)
                           } catch (error) {
                               console.log(error);

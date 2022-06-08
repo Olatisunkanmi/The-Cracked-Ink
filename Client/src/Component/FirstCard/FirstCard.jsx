@@ -10,7 +10,7 @@ import { useEffect } from 'react';
 const FirstCard = ({newPost}) => {
       // Send only last item to array to first card.
 
-        console.log(newPost);
+        // console.log(newPost);
   return (
     <div className='FirstCard--container'>
 
