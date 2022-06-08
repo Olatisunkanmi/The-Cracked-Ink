@@ -35,7 +35,11 @@ const CardList = ({post} ) => {
           <span className="CardDesc">
               {post.desc}
           </span>
-          <button className='cardBtn'> Read More </button>
+          <button className='cardBtn'>
+          <Link to={`/posts/${post._id}`}>
+          Read More 
+                  </Link>
+          </button>
       </div>
 
      

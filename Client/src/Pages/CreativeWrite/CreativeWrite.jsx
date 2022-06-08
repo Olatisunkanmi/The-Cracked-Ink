@@ -15,15 +15,21 @@ const [newPost, setNewPosts ] =  useState([])
            try {
               const res = await axios.get('/posts');
                         console.log(res.data);
+                          setPosts(res.data)
 
-              // getting the last post to send to <FeaturedPost />
-              const newPost =  res.data[res.data.length - 1]
+                          try {
+                                // getting the last post to send to <FeaturedPost />
+                                // getting the last post to send to <FeaturedPost />
+                              const newPost =  res.data[res.data.length - 1];
 
-              console.log(newPost);
-
+                              console.log(newPost);
+                              setNewPosts(newPost)
+                          } catch (error) {
+                              console.log(error);
+                          }
             // setting post to the newdata received from the /api
-            const RandomPost =  
-            setPosts(res.data)
+           
+        
            } catch (error) {
               console.log(error);
            }
@@ -33,13 +39,14 @@ const [newPost, setNewPosts ] =  useState([])
   }, [])
 
 
+ 
 
   return (
         <div>
 
     <Header />
     <Topbar  /> 
-    <FirstCard posts={newPost}/>
+    <FirstCard newPost={newPost}/>
     <FeaturedCard posts={posts}/>
     <Footer /> 
 
