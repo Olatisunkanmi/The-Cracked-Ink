@@ -4,7 +4,7 @@ import gamble from "../../Assests/gamble.jpg";
  
 
 const CardList = ({post} ) => {
-
+    console.log(post);
   return (
       <>
       

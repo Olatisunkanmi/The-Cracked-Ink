@@ -8,7 +8,7 @@ import { useLocation } from "react-router-dom";
 
 export default function CreativeWrite () {
   const [posts, setPosts ] = useState([]);
-  
+const [newPost, setNewPosts ] =  useState([])
 
   useEffect(() => {
       const fetchPosts =  async () => {
@@ -20,7 +20,9 @@ export default function CreativeWrite () {
               const newPost =  res.data[res.data.length - 1]
 
               console.log(newPost);
+
             // setting post to the newdata received from the /api
+            const RandomPost =  
             setPosts(res.data)
            } catch (error) {
               console.log(error);
@@ -37,7 +39,7 @@ export default function CreativeWrite () {
 
     <Header />
     <Topbar  /> 
-    <FirstCard />
+    <FirstCard posts={newPost}/>
     <FeaturedCard posts={posts}/>
     <Footer /> 
 

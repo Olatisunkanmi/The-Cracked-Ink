@@ -2,12 +2,18 @@ import {React}  from 'react';
 
 import './FirstCard.css';
 import gamble from "../../Assests/sea.jpg";
+import { useState } from 'react';
+import { useEffect } from 'react';
 
 
 
-const FirstCard = () => {
+const FirstCard = ({post}) => {
+      // Send only last item to array to first card.
+
+        console.log(post);
   return (
     <div className='FirstCard--container'>
+
 
         <div className=''>
             <img src={gamble}
@@ -18,8 +24,8 @@ const FirstCard = () => {
                         <div className='FirstCard--date--cat'>
                         <span className="FirstCard--date">Sept. 3 2019</span>
 
-                        <span className="FirstCard--cat">Music</span>
-                        <span className="FirstCard--cat">Lifestyle</span>
+                              <div className='FirstCard--cat'>
+                              </div>
                         </div>
                     <span className="FirstCard--title">The Old Man and The Sea</span>
 
