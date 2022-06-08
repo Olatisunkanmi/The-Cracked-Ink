@@ -4,6 +4,7 @@ import gamble from "../../Assests/gamble.jpg";
  
 
 const CardList = ({post} ) => {
+
   return (
       <>
       
@@ -21,7 +22,12 @@ const CardList = ({post} ) => {
           <span className="CardDate">{new Date(post.createdAt).toDateString() }</span>
 
                     <div className="CardCat">
-                    <span> {post.categories}</span>
+                          <p> {post.categories }</p>
+                          {
+                            // post.categories.map(c => (
+                            //   <span> {c.name}</span>
+                            // ))
+                          }
                     </div>
           </div>
     

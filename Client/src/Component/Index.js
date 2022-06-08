@@ -1,6 +1,6 @@
 export {default as Topbar } from './Topbar/Topbar';
 export { default as Header } from './Header/Header';
-export {default as Write} from '../Pages/Write/Write';
+export {default as CreativeWrite} from '../Pages/CreativeWrite/CreativeWrite';
 export {default as Footer } from './Footer/Footer';
 export {default as CardList} from './CardList/CardList';
 export { default as FeaturedCard} from './FeaturedCard/FeaturedCard';
