@@ -1,4 +1,5 @@
 import {React}  from 'react';
+import {Link } from "react-router-dom"
 
 import './FirstCard.css';
 import gamble from "../../Assests/sea.jpg";
@@ -33,9 +34,11 @@ const FirstCard = ({newPost}) => {
                           {newPost.desc}
 
                     </span>
-                    <button className='FirstCard--btn'> Read More </button>
-
-
+                    <button className='FirstCard--btn'> 
+                              <Link to={`/posts/${newPost._id}`}>
+                              Read More 
+                              </Link>
+                    </button>
                     </div>
 
             

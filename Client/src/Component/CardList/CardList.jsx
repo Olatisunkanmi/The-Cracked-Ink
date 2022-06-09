@@ -8,20 +8,10 @@ import { useEffect } from 'react';
 const CardList = ({post} ) => {
     // console.log(post);
 
-    const [randomPosts, setRandomPosts] = useState([])
+    // const [randomPosts, setRandomPosts] = useState([])
 
-    useEffect(() => {
-      const getrandomPosts = async => {
-            try {
-              
-            } catch (error) {
-                console.log(error);
-            }
-            getrandomPosts()
-      }
-    })
+  
 
-    
   return (
       <>
       

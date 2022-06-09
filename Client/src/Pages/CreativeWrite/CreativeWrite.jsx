@@ -14,19 +14,35 @@ const [newPost, setNewPosts ] =  useState([])
       const fetchPosts =  async () => {
            try {
               const res = await axios.get('/posts');
-                        // console.log(res.data);
-                          const  newData =  res.data;
 
-                const getrandomPosts = newData[Math.floor( Math.random() * newData.length) ];
-                  console.log(getrandomPosts);
-
-                          setPosts(res.data)
-
+           
+                        console.log(res.data);
+                                      try {
+ 
+                                        let   newArr =  res.data;
+                                        // A function to randomly select three posts for the cardlists
+                                        
+                                        const chooseRandom = (arr, num = 1) => {
+                                          const res = [];
+                                          for(let i = 0; i < num; ){
+                                            const random = Math.floor(Math.random() * arr.length);
+                                            if(res.indexOf(arr[random]) !== -1){
+                                                continue;
+                                            };
+                                            res.push(arr[random]);
+                                            i++;
+                                          };
+                                          return res;
+                                      };
+                                    
+                                      setPosts(chooseRandom(newArr, 3));
+                                      } catch (error) {
+                                        
+                                      }
                           try {
                                 // getting the last post to send to <FeaturedPost />
-                                // getting the last post to send to <FeaturedPost />
-                              const newPost =  res.data[res.data.length - 1];
-
+                                 // finding the last post of the array
+              const newPost =  res.data[res.data.length - 1];
                               // console.log(newPost);
                               setNewPosts(newPost)
                           } catch (error) {

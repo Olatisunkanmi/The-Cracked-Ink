@@ -8,16 +8,16 @@ import { useState } from 'react';
 // import { Comment, MenuBook, Person, Timer } from '@material-ui/icons';
 
 const SinglePost = () => {
-  const [cat, setCats] =  useState([])
-  console.log(cat)
+//   const [cat, setCats] =  useState([])
+//   console.log(cat)
 
-  useEffect(() => {
-      const getCats = async () => {
-           const res = await axios .get(`/posts`);
-            console.log(res.data);
-      }
-      getCats()
-  }, [])
+//   useEffect(() => {
+//       const getCats = async () => {
+//            const res = await axios .get(`/posts`);
+//             console.log(res.data);
+//       }
+//       getCats()
+//   }, [])
 
    // getting the Id of the post
 //    so all post and open on a new page in repect to their ids 
