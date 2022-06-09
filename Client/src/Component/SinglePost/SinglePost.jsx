@@ -8,6 +8,7 @@ import { useState } from 'react';
 // import { Comment, MenuBook, Person, Timer } from '@material-ui/icons';
 
 const SinglePost = () => {
+
 //   const [cat, setCats] =  useState([])
 //   console.log(cat)
 
@@ -23,6 +24,9 @@ const SinglePost = () => {
 //    so all post and open on a new page in repect to their ids 
   const location = useLocation().pathname.split('/')[2]
   console.log(location);
+
+  const lot = useLocation()
+//   console.log(lot);
   const [post, setPost ] = useState ({})
 
   
@@ -30,7 +34,7 @@ const SinglePost = () => {
       const getDetails = async () => {
           const res = await axios.get(`/posts/${location}`);    
 
-          console.log(res.data);
+        //   console.log(res.data);
           setPost(res.data);
       };
       getDetails();  

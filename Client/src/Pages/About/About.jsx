@@ -1,10 +1,12 @@
 import './About.css';
+import {Link } from "react-router-dom"
 import {Header } from '../../Component/Index';
 import profileImage from '../../Assests/sk.jpg';
 import {Facebook, GitHub, Instagram, LinkedIn, Twitter } from '@material-ui/icons'
 
 
 const About = () => {
+ 
   return (
     <>
     <Header />
@@ -57,7 +59,12 @@ const About = () => {
                                 </div>
 
                                 <div>
-                                <button> Go To Blog </button>
+                                <button> 
+                                  <Link to="/posts/">
+                                      Go To Blog
+                                  </Link>
+                            
+                                 </button>
                                 <p>Enough With the boring stuffs, I promise you are going to love it there.</p>
                         </div>
             </div>

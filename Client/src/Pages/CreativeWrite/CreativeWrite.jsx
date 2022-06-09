@@ -10,10 +10,12 @@ export default function CreativeWrite () {
   const [posts, setPosts ] = useState([]);
 const [newPost, setNewPosts ] =  useState([])
 
+
+
   useEffect(() => {
       const fetchPosts =  async () => {
            try {
-              const res = await axios.get('/posts');
+              const res = await axios.get("/posts " );
 
            
                         console.log(res.data);
