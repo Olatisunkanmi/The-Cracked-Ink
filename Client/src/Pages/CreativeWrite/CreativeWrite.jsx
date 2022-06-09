@@ -4,7 +4,7 @@ import { useEffect } from "react"
 import { useState } from "react"
 import { useLocation } from "react-router-dom";
 
-
+// If page is yet to return render loading
 
 export default function CreativeWrite () {
   const [posts, setPosts ] = useState([]);
@@ -14,7 +14,8 @@ const [newPost, setNewPosts ] =  useState([])
 
   useEffect(() => {
       const fetchPosts =  async () => {
-           try {
+              
+                try {
               const res = await axios.get("/posts " );
 
            
