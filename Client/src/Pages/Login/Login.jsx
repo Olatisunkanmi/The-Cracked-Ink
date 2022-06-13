@@ -1,28 +1,50 @@
 import './Login.css'
+import { useRef , useContext} from 'react';
 import { Context } from '../../Component/context/Context';
-import {Link } from "react-router-dom"
+import {Link } from "react-router-dom";
+import axios from 'axios';
 
 
 const Login = () => {
   const userRef =  useRef();
-  const passwordRef =  useREf()
+  const passwordRef =  useRef(); 
+  const { dispatch, isFetching, user } = useContext(Context);
 
-  const { dispatch, isFetching } = useContext(Context)
 
-
-    const handleSubmit = (e) => {
+    const handleSubmit =  async (e) => {
       e.preventDefault(); 
 
 
       // this is used to call the login_start written in context js
       // when button is clicked 'isFecthing' is set to true
-      dispatch({})
+      // then  login process can begin 
+               dispatch({type : "LOGIN_START"});
+              
+              try {             
+                  const res = await axios.post('/auth/login',  {
+                   
+                    username : userRef.current.value,
+                    password : passwordRef.current.value,
+                  }) 
+                    
+                  // payload ?
+                  // payload is 'User' in reducer: check : 👀
+                  //  from here res.data is set as 'user'
+             dispatch({type : "LOGIN_SUCCESS", payload: res.data });
+             
+             console.log('Login Success')
+              } catch (error) {
+                dispatch({type : "LOGIN_FAILURE" });
+                  console.log('Login Failed ');
+              }
     }
+
+    console.log(user);
   return (
     <>
     
     <div class="wrapper">
-
+  
 
             
                 <div class="wrapper-div">
@@ -30,49 +52,27 @@ const Login = () => {
                     <h3>Admin Login</h3>
 
                     </div>
-
-            <form action="" onSubmit={handleSubmit}>
-              {
-                // <label> Username </label>
-              }
-                  <input 
-                          type="text" 
-                          class="input--register" 
-                          placeholder="Email / Username" 
-
-                          // refrence for username login 
-                          ref={userRef}
-                          />
-                  {
-                    // <label> Password </label>
-                  }
-                  <input 
-                          type="text" 
-                          class="input--register" 
-                          placeholder="Password" 
-
-                          // refrence for Password login 
-                          ref={passwordRef}
-                          />
-
-
-                  <p 
-                      class="forgot">
-                      Forgot Password ?  
-                  </p>
-            </form>
-
-            <div class="submit--div">
-                    <button 
-                              class="sign-btn"> 
-                          <Link to="/admin-page" 
-                                className='link'>
-                                  Sign In
-                            </Link>
-                    </button>
-                      { // <span> This page is only for admin</span> 
-                      }
-            </div>
+                   
+                <form className="loginForm" onSubmit={handleSubmit}>
+                <label>Username</label>
+                <input
+                  type="text"
+                  className="loginInput"
+                  placeholder="Enter your username..."
+                  ref={userRef}
+                />
+                <label>Password</label>
+                <input
+                  type="password"
+                  className="loginInput"
+                  placeholder="Enter your password..."
+                  ref={passwordRef}
+                />
+                <button className="loginButton" type="submit" disabled={isFetching}>
+                  Login
+                </button>
+              </form>
+           
 
  
         </div>
