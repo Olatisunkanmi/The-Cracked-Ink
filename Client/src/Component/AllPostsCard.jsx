@@ -1,12 +1,13 @@
 import React from 'react'
-import {Link } from "react-router-dom"
+import {Link, useLocation } from "react-router-dom"
 import {  useState } from "react";
 import { ArrowRightAlt, CommentOutlined, FavoriteBorderOutlined, Share } from "@material-ui/icons";
 
 const AllPostsCard = ({post}) => {
+  const Path = useLocation()
 
  const  PostLikes = post.likes.length 
- console.log(PostLikes);
+//  console.log(PostLikes);
   const [likes, setLikes] = useState(0);
   const [isClicked, setIsClicked] = useState(false);
 
@@ -18,8 +19,6 @@ const AllPostsCard = ({post}) => {
     }
     setIsClicked(!isClicked);
   };
-
-
 
   return (
     <div>
