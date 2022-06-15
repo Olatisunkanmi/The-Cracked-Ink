@@ -72,7 +72,7 @@ app.post("/user/upload", upload.single ("file"),  (req, res ) => {
 
 app.use("/api/auth", AUTHROUTE); 
 app.use("/api/login", USERLOGIN); 
-app.use("/api/posts", POSTCREATE); 
+app.use("/api/posts", POSTCREATE);  
 app.use("/api/category", CATCREATE); 
 
 app.listen("5000", () => {
