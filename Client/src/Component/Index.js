@@ -10,3 +10,4 @@ export { default as Login } from '../Pages/Login/Login';
 export { default as About } from '../Pages/About/About';
 export {default as Post} from '../Pages/Post/Post';
 export {default as Tech} from '../Pages/Tech/Tech';
+export { default as Edit} from '../Pages/EditPost/Edit'
