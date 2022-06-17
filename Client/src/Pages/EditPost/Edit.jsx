@@ -2,7 +2,9 @@ import './Edit.css'
 
 const Edit = () => {
   return (
-    <div>Edit</div>
+    <div>
+      <h1>    THis is an Edited Page</h1>
+    </div>
   )
 }
 
