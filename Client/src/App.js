@@ -14,11 +14,14 @@ function App() {
 
             <Route  path='/posts/' element={<CreativeWrite />} /> 
             <Route  path='/posts/:Id' element={<Post />} />
-                
-            <Route element = { <RequireAuth />}>
+            <Route  path='/admin-login' element={<Login />} /> 
+
+            <Route 
+            element = { <RequireAuth />}
+                   >
+           
             <Route  path='/admin-login/edit' element={<Edit />} /> 
             </Route>
-            <Route  path='/admin-login' element={<Login />} /> 
             
         
 
