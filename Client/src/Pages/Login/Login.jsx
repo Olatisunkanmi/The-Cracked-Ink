@@ -1,19 +1,25 @@
 import './Login.css'
-import { useRef , useContext} from 'react';
+import { useRef, useContext } from 'react';
 import { Context } from '../../Component/context/Context';
-import {Link, useNavigate } from "react-router-dom";
+import { useAuth }  from '../../Hooks/useAuth';
+import {  Routes, Route, Link, useNavigate, useLocation, Outlet, Navigate, } from "react-router-dom";
 import axios from 'axios';
 import { SinglePost } from '../../Component/Index';
 
 
+
+
+
 const Login = () => {
   let navigate =  useNavigate()
+    
+    const { setAuth, dispatch, isFetching, user } =   useAuth();
 
-  const userRef =  useRef();
+  const userRef =  useRef(); 
   const passwordRef =  useRef(); 
-  const { dispatch, isFetching, user } = useContext(Context);
-
-
+  // const { dispatch, isFetching, user } = useContext(Context);
+    
+  
     const handleSubmit =  async (e) => {
       e.preventDefault(); 
 
@@ -22,30 +28,44 @@ const Login = () => {
       // when button is clicked 'isFecthing' is set to true
       // then  login process can begin 
                dispatch({type : "LOGIN_START"});
-              
-              try {             
-                  const res = await axios.post('/auth/login',  {
+               
+              try {      
+                
+                // To auth user if !user 
+                // send a login error 
+                     if (user ) {
+                      console.log( 'Hello');
+                     }
+                          const res = await axios.post('/auth/login',  {
                    
-                    username : userRef.current.value,
-                    password : passwordRef.current.value,
-                  }) 
-                    
-                  // payload ?
-                  // payload is 'User' in reducer: check : 👀
-                  //  from here res.data is set as 'user'
-             dispatch({type : "LOGIN_SUCCESS", payload: res.data });
-                  
-              // navigate( './posts', {replace : true})
-             console.log('Login Success')
-              } catch (error) {
+                   username : userRef.current.value,
+                   password : passwordRef.current.value,
+                 }) 
+                   
+                 // payload ?
+                 // payload is 'User' in reducer: check : 👀
+                 //  from here res.data is set as 'user'
+            dispatch({type : "LOGIN_SUCCESS", payload: res.data });
+                 
+             // navigate( './posts', {replace : true})
+            console.log('Login Success')
+
+          
+                       
+              } catch (error) { 
+
+
                 dispatch({type : "LOGIN_FAILURE" });
+
+
                   console.log('Login Failed ');
               }
     }
 
-    console.log(user);
+    console.log(user)
+    console.log('log');
   return (
-    <>
+    
     
     <div class="wrapper">
   
@@ -89,9 +109,11 @@ const Login = () => {
 
     </div>
 
-    </>
+ 
 
-  )
-}
+  );
+};
+
+
 
 export default Login
