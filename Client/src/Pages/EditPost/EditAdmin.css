@@ -15,7 +15,7 @@
     padding: 10px;
     flex-wrap: wrap;
     display: flex;
-    align-items: center;
+    /* align-items: center; */
 }
 
 
@@ -167,9 +167,27 @@ background-color: rgba(245, 245, 220, 0.471);
 }
 
 
+
+
+
 .featured--posts{
             flex: 1;
             text-align: left; 
+            padding: 30px;
+
+}
+
+
+
+.featured-header, .comments-header{
+    padding: 10px;
+    border-top: 2px wheat solid ;
+    text-align: left;
+    border-bottom: 1px wheat solid ;
+    font-size: 22px;
+    color:  whitesmoke;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
 }
 
 
@@ -183,18 +201,20 @@ background-color: rgba(245, 245, 220, 0.471);
     margin-top: 20px;
 }
 
-.posts--items{
+.posts--items, .comment--items{
     display: flex;
     color: white;
     align-items: center;
     font-size: 22px;
     border-bottom: 2.5px black solid;
     padding: 2ch;
-
     justify-content:  space-between;
 }
 
 
+.comment--items{
+    font-size: 16px;
+}
 .widgetSmButton{
     margin-left: 10px;
     cursor: pointer;
@@ -208,4 +228,7 @@ background-color: rgba(245, 245, 220, 0.471);
 
 .featured--Comments{
     flex: 1;
+    padding: 30px;
 }
+
+

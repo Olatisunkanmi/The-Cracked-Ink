@@ -1,6 +1,6 @@
 import './EditAdmin.css'
-import image from '../../Assests/404.svg'
-import { Add, Book, Delete, EditOutlined, ExitToApp, GolfCourse, NotificationImportantOutlined, Settings } from '@material-ui/icons';
+import image from '../../Assests/write.svg'
+import { Add, Book, ChromeReaderMode, Delete, EditOutlined, ExitToApp, GolfCourse, NotificationImportantOutlined, Settings } from '@material-ui/icons';
 
 const Edit = () => {
   return (
@@ -39,7 +39,7 @@ const Edit = () => {
 
 
             <div className="container bd">
-                    <div className="bd-wrapper">
+                    <div className="bd-wrapper features">
                               <div className="card--div">
                                         <div className="svg-cs">  
                                               <img src={image} alt="" className='svg--img' />
@@ -99,75 +99,91 @@ const Edit = () => {
 
 
             <div className="container">
-                      <div className="bd-wrapper ft">
-                        
-                              <div className='featured--posts'>
-                              <p>Featured Posts</p>
-                                      <ul className="featured--post--ul">
-                                              <li className='posts--items'>
-                                                  <p> How I met Your Mother </p>
-                                                             <div>
-                                                              <button className="widgetSmButton">
-                                                                          <EditOutlined />
-                                                                          </button>
-                                                                          
+                      <div className="bd-wrapper features">
+                                    
+                                          <div className='featured--posts'>
+                                          <p className='featured-header'>Featured Posts</p>
+                                                  <ul className="featured--post--ul">
+                                                          <li className='posts--items'>
+                                                              <p> How I met Your Mother </p>
+                                                                        <div>
                                                                           <button className="widgetSmButton">
-                                                                          <Delete />
-                                                                          </button>
-                                                              </div>
-                                                              
-                                                    </li>
-                                              <li className='posts--items'>
-                                                  <p> How I met Your Mother </p>
-                                                             <div>
-                                                              <button className="widgetSmButton">
-                                                                          <EditOutlined />
-                                                                          </button>
+                                                                                      <EditOutlined />
+                                                                                      </button>
+                                                                                      
+                                                                                      <button className="widgetSmButton">
+                                                                                      <Delete />
+                                                                                      </button>
+                                                                          </div>
                                                                           
+                                                                </li>
+                                                          <li className='posts--items'>
+                                                              <p> How I met Your Mother </p>
+                                                                        <div>
                                                                           <button className="widgetSmButton">
-                                                                          <Delete />
-                                                                          </button>
-                                                              </div>
-                                                              
-                                                    </li>
-                                              <li className='posts--items'>
-                                                  <p> How I met Your Mother </p>
-                                                             <div>
-                                                              <button className="widgetSmButton">
-                                                                          <EditOutlined />
-                                                                          </button>
+                                                                                      <EditOutlined />
+                                                                                      </button>
+                                                                                      
+                                                                                      <button className="widgetSmButton">
+                                                                                      <Delete />
+                                                                                      </button>
+                                                                          </div>
                                                                           
+                                                                </li>
+                                                          <li className='posts--items'>
+                                                              <p> How I met Your Mother </p>
+                                                                        <div>
                                                                           <button className="widgetSmButton">
-                                                                          <Delete />
-                                                                          </button>
-                                                              </div>
-                                                              
-                                                    </li>
-                                              <li className='posts--items'>
-                                                  <p> How I met Your Mother </p>
-                                                             <div>
-                                                              <button className="widgetSmButton">
-                                                                          <EditOutlined />
-                                                                          </button>
+                                                                                      <EditOutlined />
+                                                                                      </button>
+                                                                                      
+                                                                                      <button className="widgetSmButton">
+                                                                                      <Delete />
+                                                                                      </button>
+                                                                          </div>
                                                                           
+                                                                </li>
+                                                          <li className='posts--items'>
+                                                              <p> How I met Your Mother </p>
+                                                                        <div>
                                                                           <button className="widgetSmButton">
-                                                                          <Delete />
-                                                                          </button>
-                                                              </div>
-                                                              
-                                                    </li>
-                                             
-                                          </ul>
-                              </div>
+                                                                                      <EditOutlined />
+                                                                                      </button>
+                                                                                      
+                                                                                      <button className="widgetSmButton">
+                                                                                      <Delete />
+                                                                                      </button>
+                                                                          </div>
+                                                                          
+                                                                </li>
+                                                        
+                                                      </ul>
+                                          </div>
                                  
 
 
 
 
-                                  
-                                  <div className="featured--Comments">
-                                        <p>Hello</p>
-                                  </div>
+                                          
+                                          <div className="featured--Comments">
+                                          <p className='comments-header'>Featured Comments</p>
+                                      <ul className="featured--post--ul">
+                                              <li className='comment--items'>
+                                                  <p> 
+                                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum vitae praesentium aliquid. Quisquam et tempore qui natus quam praesentium facilis ex laborum, recusandae sequi inventore non aliquid optio voluptatem ipsum.
+                                                  </p>
+                                                             <div>
+                                                                          <button className="widgetSmButton">
+                                                                         
+                                                                          <ChromeReaderMode />
+                                                                          </button>
+                                                              </div>
+                                                              
+                                                    </li>
+                                          </ul>
+
+
+                                          </div>
                       </div>
             </div>
 
