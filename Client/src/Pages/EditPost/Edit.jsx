@@ -1,10 +1,25 @@
-import './Edit.css'
+import './Edit.css';
+import { Facebook, NotificationImportantOutlined } from '@material-ui/icons';
 
 const Edit = () => {
   return (
-    <div>
-      <h1>    THis is an Edited Page</h1>
-    </div>
+      <>
+            <div className="topar--container">
+                    <div className="left--tp--div"> Writer Control Panel</div>
+                    <div className="right--tp--div">
+                          <ul className="right--ul">
+
+                                <li className="right--item"> 
+                                    <img src="" alt="" />
+                                </li>
+                                <li className="right--item"> 
+                                      <Facebook />
+                                </li>
+
+                          </ul>
+                    </div>
+            </div>
+      </>
   )
 }
 

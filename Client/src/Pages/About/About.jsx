@@ -77,6 +77,13 @@ const About = () => {
 
                         <div className="contact--div">
                         <button className='contact--btn'>Contact Me!</button>
+
+                        <button> 
+                                  <Link to="/admin-login/edit">
+                                   Login as Admin
+                                  </Link>
+                            
+                                 </button>
                         <p>Everything Begins with an Hello !</p>
                         </div>
 

@@ -99,8 +99,6 @@ router.get("/:id", async (req, res ) => {
         console.log("You can only get your data")
     }
 })
-
-
 // Get all users as Admin 
 // router.get('/all', async (req, res ) => ){
 

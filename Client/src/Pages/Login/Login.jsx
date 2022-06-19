@@ -11,7 +11,7 @@ import { SinglePost } from '../../Component/Index';
 
 
 const Login = () => {
-  let navigate =  useNavigate()
+            const navigate = useNavigate()
     
     const { setAuth, dispatch, isFetching, user } =   useAuth();
 
@@ -33,10 +33,8 @@ const Login = () => {
                 
                 // To auth user if !user 
                 // send a login error 
-                     if (user ) {
-                      console.log( 'Hello');
-                     }
-                          const res = await axios.post('/auth/login',  {
+                    
+                  const res = await axios.post('/auth/login',  {
                    
                    username : userRef.current.value,
                    password : passwordRef.current.value,
@@ -46,8 +44,11 @@ const Login = () => {
                  // payload is 'User' in reducer: check : 👀
                  //  from here res.data is set as 'user'
             dispatch({type : "LOGIN_SUCCESS", payload: res.data });
-                 
-             // navigate( './posts', {replace : true})
+
+
+           
+            navigate( '/admin-login/edit', { replace : true})
+            
             console.log('Login Success')
 
           
