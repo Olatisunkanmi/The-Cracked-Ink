@@ -1,0 +1,41 @@
+.topbar--container{
+    background-color: beige;
+}
+
+.wrapper{
+    max-width: 1080px;
+    margin: 0 auto;
+}
+
+.left--tp--div{
+    flex: 2;
+    display: flex;
+    align-items: center;
+}
+
+.write{
+    font-family: cursive;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.write::first-letter{
+    font-size: 30px;
+}
+
+.book{
+    font-size: 30px !important;
+}
+
+.right--tp--div{
+    flex: 1;
+}
+
+.right--ul{
+    display: flex;
+    list-style-type: none;
+}
+
+.right--item{
+    margin-right: 20px;
+}
