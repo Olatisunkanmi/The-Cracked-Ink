@@ -1,5 +1,6 @@
 import './EditAdmin.css'
-import image from '../../Assests/write.svg'
+import image from '../../Assests/write.svg';
+import {Link} from 'react-router-dom'
 import { Add, Book, ChromeReaderMode, Delete, EditOutlined, ExitToApp, GolfCourse, NotificationImportantOutlined, Settings } from '@material-ui/icons';
 
 const Edit = () => {
@@ -56,9 +57,14 @@ const Edit = () => {
                                                           <Add /> <p className='btn--para'> New Article </p>
                                                       </button>
 
+
+                                                      <Link  to="/" className='link'>
                                                       <button className='wel--btn'>
-                                                          <GolfCourse /> <p className='btn--para'> Go To Blog</p>
-                                                      </button>
+
+                                                       <GolfCourse /> <p className='btn--para'> Go To Blog</p>
+                                                       </button>
+                                                       </Link>
+                                                 
                                                 </div>
                                         </div>
                               </div>
