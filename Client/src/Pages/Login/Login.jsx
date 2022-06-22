@@ -4,10 +4,6 @@ import { Context } from '../../Component/context/Context';
 import { useAuth }  from '../../Hooks/useAuth';
 import {  Routes, Route, Link, useNavigate, useLocation, Outlet, Navigate, } from "react-router-dom";
 import axios from 'axios';
-import { SinglePost } from '../../Component/Index';
-
-
-
 
 
 const Login = () => {
@@ -30,39 +26,25 @@ const Login = () => {
                dispatch({type : "LOGIN_START"});
                
               try {      
-                
                 // To auth user if !user 
                 // send a login error 
-                    
                   const res = await axios.post('/auth/login',  {
-                   
                    username : userRef.current.value,
                    password : passwordRef.current.value,
                  }) 
-                   
                  // payload ?
                  // payload is 'User' in reducer: check : 👀
                  //  from here res.data is set as 'user'
             dispatch({type : "LOGIN_SUCCESS", payload: res.data });
-
-
-           
             navigate( '/admin-login/edit', { replace : true})
-            
             console.log('Login Success')
 
-          
-                       
               } catch (error) { 
-
-
                 dispatch({type : "LOGIN_FAILURE" });
-
-
                   console.log('Login Failed ');
               }
     }
-
+  
     console.log(user)
     console.log('log');
   return (

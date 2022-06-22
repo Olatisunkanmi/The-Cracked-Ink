@@ -40,10 +40,10 @@ const [newPost, setNewPosts ] =  useState([])
                                     
                                       setPosts(chooseRandom(newArr, 3));
                                       } catch (error) {
-                                        
+                                              console.log(error);
                                       }
                           try {
-                                // getting the last post to send to <FeaturedPost />
+                                // getting the last post to send to <FirstCard />
                                  // finding the last post of the array
               const newPost =  res.data[res.data.length - 1];
                               // console.log(newPost);

@@ -59,6 +59,21 @@
     margin-right: 10px;
 }
 
+.tp--btn{
+    background-color: inherit;
+    border: 1px solid white;
+    padding: 5px 7px;
+    border-radius: 10px;
+    cursor: pointer;
+
+}
+
+.tp--btn:hover{
+    background-color: white;
+    border: 1px solid black;
+
+}
+
 .card--div{
     display: flex;
     align-items: center;
