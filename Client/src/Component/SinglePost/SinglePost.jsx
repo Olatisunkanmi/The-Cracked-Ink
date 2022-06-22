@@ -23,7 +23,7 @@ const SinglePost = () => {
    // getting the Id of the post
 //    so all post and open on a new page in repect to their ids 
   const location = useLocation().pathname.split('/')[2]
-  console.log(location);
+  console.log(`${location} loca`);
 
   const lot = useLocation()
 //   console.log(lot);
@@ -71,7 +71,7 @@ const SinglePost = () => {
           
                     <p className='post--content'> 
                             {
-                                // post.content
+                                post.content
                             }
                     </p>
                     

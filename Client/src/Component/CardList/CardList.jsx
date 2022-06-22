@@ -7,10 +7,7 @@ import { useEffect } from 'react';
 
 const CardList = ({post} ) => {
 
-    // console.log(post);
-
-    // const [randomPosts, setRandomPosts] = useState([])
-
+    console.log(post);
   
 
   return (

@@ -12,3 +12,4 @@ export {default as Post} from '../Pages/Post/Post';
 export {default as Tech} from '../Pages/Tech/Tech';
 export { default as Edit} from '../Pages/EditPost/Edit';
 export { default as NotFound} from '../Pages/404/NotFound';
+export {default as Write} from '../Pages/Write/Write'
