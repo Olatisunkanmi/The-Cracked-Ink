@@ -25,8 +25,8 @@ const id =   post._id
 
 
     const EditPost =  ( ) => {
-        console.log(id);
-        navigate('/admin-login/edit/adminwrite', {state: {post}   }   )
+        // console.log(id);
+        // navigate('/admin-login/edit/adminwrite', {state: {post}   }   )
    }
      
   return (
