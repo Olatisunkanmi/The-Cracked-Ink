@@ -1,11 +1,15 @@
-import {CreativeWrite, Post, About, Login, Edit, NotFound} from './Component/Index'
+import {CreativeWrite, Post, About, Login, Edit, NotFound, Write} from './Component/Index'
 import { BrowserRouter, Routes, Route,  useNavigate} from "react-router-dom";
 import { Context } from './Component/context/Context';
 import RequireAuth from './Hooks/RequireAuth';
-import { useContext  } from 'react'
+import { useContext, useState , useEffect } from 'react'
+import axios from 'axios';
+
+
+
+
 function App() {
   const {user} =  useContext(Context);
-      
   return (
    
     <BrowserRouter >   
@@ -17,13 +21,12 @@ function App() {
             <Route  path='/posts/:Id' element={<Post />} />
             <Route  path='/admin-login' element={<Login />} /> 
 
-            <Route 
-            element = { <RequireAuth />}
-                   >
-           
-            <Route  path='/admin-login/edit' element={<Edit />} /> 
+            <Route  element = { <RequireAuth  />}>
+                   <Route  path='/admin-login/edit' element={<Edit />} />
+                   <Route  path='/admin-login/edit/:Id' element={<Write />} />
+                   <Route  path='/admin-login/edit/adminwrite' element={<Write />}
+          /> 
             </Route>
-            
         
 
        </Routes>
