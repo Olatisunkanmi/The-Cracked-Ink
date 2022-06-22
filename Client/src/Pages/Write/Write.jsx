@@ -16,14 +16,18 @@ const HandleSubmit = async (e) => {
   e.preventDefault();
 
   const newPost = {
-    username: user.username,
-    title,
-    desc,
-    
+    // username: user.username,
+    title: title,
+    desc: desc,
+   
   };
 
+  
+  console.log(title);
+  console.log(desc);
+
   if(file){
-    const data = FormData();
+    const data = new FormData();
 
     // prevent user from uploading diffrent images with same name 
     const filename = Date.now + file.name;
@@ -39,14 +43,17 @@ const HandleSubmit = async (e) => {
         }
   }
         try {
-          const res = axios.post(`/posts`)
+          const res = await axios.post("/posts", newPost)
+          console.log(res);
             navigate(`/posts/${res.data._id}`)
         } catch (error) {
+                console.log(error);
 
         }
 
 }
    
+
     //  const [newContent, SetNewContent] = useState(`${content}`)
    const PublishPost =   () => {
         // const res =  await axios.post(`/posts/`)
@@ -74,24 +81,30 @@ const HandleSubmit = async (e) => {
                 
                 
                 <input id="fileInput" type="file" style={{ display: "none" }}  onChange={(e) => setFile(e.target.files[0])}/>
+
                 <input
                     className="writeInput"
                     placeholder="Title"
                     type="text"
-                    autoFocus={true}
+                    
+                    onChange= {e => setTitle(e.target.value)}
                 />
                 </div>
                 <div className="writeFormGroup">
               
 
-              <textarea className="writeInput writeText" placeholder="Tell your story..." type="text" autoFocus={true} />
+              <textarea className="writeInput writeText" 
+              placeholder="Tell your story..." 
+              type="text" 
+  
+              onChange={e => setDesc(e.target.value)} />
 
                 
 
 
                 </div>
 
-                <button className="writeSubmit" type="submit"  onClick={PublishPost}> Publish </button>
+                <button className="writeSubmit" type="submit"> Publish </button>
             
             
             </form>
