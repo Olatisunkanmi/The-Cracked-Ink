@@ -16,7 +16,7 @@ const HandleSubmit = async (e) => {
   e.preventDefault();
 
   const newPost = {
-    // username: user.username,
+    username: user.username,
     title: title,
     desc: desc,
    
@@ -30,14 +30,15 @@ const HandleSubmit = async (e) => {
     const data = new FormData();
 
     // prevent user from uploading diffrent images with same name 
-    const filename = Date.now + file.name;
+    const filename = Date.now()+ file.name;
     data.append("name", filename);
-    data.append("file", filename);
+    data.append("file", file);
     newPost.photo = filename;
 
         try {
               // upload Image
               await axios.post("/upload", data)
+              
         } catch (error) {
               console.log(error);
         }
