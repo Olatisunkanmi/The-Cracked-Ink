@@ -2,6 +2,7 @@ import { CardList  } from "../Index"
 import './FeaturedCard.css'
 
 const FeaturedCard = ({posts}) => {
+ 
   console.log(posts);
   return (
     <>

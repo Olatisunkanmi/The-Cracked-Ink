@@ -9,7 +9,7 @@ import { useEffect } from 'react';
 
 
 const FirstCard = ({newPost}) => {
-  
+      const PF =  "http://localhost:5000/images/";
       // Send only last item to array to first card.
 
         // console.log(newPost);
@@ -18,8 +18,8 @@ const FirstCard = ({newPost}) => {
 
 
         <div className=''>
-            <img src={newPost.photo}
-            alt="image-Post"  className='FirstCard--img'/>
+            <img src={PF + newPost.photo}
+            alt="image"  className='FirstCard--img'/>
             
                     <div className="FirstCard--att--div">
 

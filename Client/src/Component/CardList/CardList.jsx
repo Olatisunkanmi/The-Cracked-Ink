@@ -6,15 +6,15 @@ import { useEffect } from 'react';
  
 
 const CardList = ({post} ) => {
-
-    console.log(post);
+  const PF =  "http://localhost:5000/images/"    
+  console.log(post);
   
 
   return (
       <>
       
     <div className='CardList'>
-  <img src={post.photo} alt="this is your picture"  className='CardImg'/>
+  <img src={PF + post.photo} alt="this is your picture"  className='CardImg'/>
 
       <div className="CardInfo">
            <span className="CardTitle">

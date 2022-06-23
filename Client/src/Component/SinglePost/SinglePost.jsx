@@ -8,17 +8,17 @@ import { useState } from 'react';
 // import { Comment, MenuBook, Person, Timer } from '@material-ui/icons';
 
 const SinglePost = () => {
+  const PF =  "http://localhost:5000/images/";
+  const [cat, setCats] =  useState([])
+  console.log(cat)
 
-//   const [cat, setCats] =  useState([])
-//   console.log(cat)
-
-//   useEffect(() => {
-//       const getCats = async () => {
-//            const res = await axios .get(`/posts`);
-//             console.log(res.data);
-//       }
-//       getCats()
-//   }, [])
+  useEffect(() => {
+      const getCats = async () => {
+           const res = await axios .get(`/posts`);
+            console.log(res.data);
+      }
+      getCats()
+  }, [])
 
    // getting the Id of the post
 //    so all post and open on a new page in repect to their ids 
@@ -34,7 +34,7 @@ const SinglePost = () => {
       const getDetails = async () => {
           const res = await axios.get(`/posts/${location}`);    
 
-        //   console.log(res.data);
+          console.log(res.data);
           setPost(res.data);
       };
       getDetails();  
@@ -47,7 +47,7 @@ const SinglePost = () => {
 
                     
               <div className='img--tag--div'>
-                  <img src={post.photo} alt="" className='post--img'/>
+                  <img src={PF + post.photo} alt="" className='post--img'/>
   
                    <p className='post--title'> {post.title} </p>
   
@@ -71,7 +71,7 @@ const SinglePost = () => {
           
                     <p className='post--content'> 
                             {
-                                post.content
+                                post.desc
                             }
                     </p>
                     
