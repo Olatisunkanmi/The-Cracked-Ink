@@ -51,8 +51,7 @@ if (req.body.userId === req.params.id){
      try {
 
         //finding user account.
-         const user = await UserDB.findById(req.params.id);
-                     try {
+                             try {
                         // deleting user posts.
                                 await PostDB.deleteMany({ 
                                     // checks username if username === DB username 

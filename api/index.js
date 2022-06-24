@@ -7,7 +7,10 @@ const USERLOGIN = require("./routes/users");
 const POSTCREATE = require("./routes/Posts")
 const CATCREATE = require("./routes/Categories")
 const multer = require('multer');
+const path = require('path');
 const cors = require('cors');
+
+
 const app = express();
 
 app.use(
@@ -22,6 +25,7 @@ app.use(
 
 dotenv.config();
 app.use(express.json());
+app.use("/images", express.static(path.join(__dirname,"/images")))
 
 // Connect to mongodb in the .env files.
 const t1 = new Date();
@@ -43,24 +47,19 @@ console.log(`${t2-t1} MSecs`);
 // this fn is to store the images uploaded from the 'req.body'
 // destination: saves file to image folder
 
-const storage  =  multer.diskStorage({
-  destination:  (req, file, cb ) => {
-      cb(null, "images");  
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, "images");
   },
-  
-  filename: (req, file ,cb ) => {
-      cb (null , "hello.jpeg")
+  filename: (req, file, cb) => {
+    cb(null, req.body.name);
   },
 });
 
-// Upload: fn for uploading files
-
 const upload = multer({ storage: storage });
-app.post("/user/upload", upload.single ("file"),  (req, res ) => {
-  res.status(200).json('File Uploaded') 
-})
-
-
+app.post("/api/upload", upload.single("file"), (req, res) => {
+  res.status(200).json("File has been uploaded");
+});
 
 
 
