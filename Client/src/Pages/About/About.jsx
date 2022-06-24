@@ -36,14 +36,10 @@ const About = () => {
                                                     I am a Writer, with actute mind for details. A Self taught backend Software Developer, who is very passionate about learning, as learning never ends.
                                                     I am also very dedicated to my work.
                                                     <br />
-                                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. S
-                                                    unt nam consectetur cupiditate doloribus nostrum beatae est
-                                                    sint dolores quo fugit voluptates repellendus dolorum eaque, 
-                                                    ipsam cumque explicabo minus provident repellat.
-                                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. S
-                                                    unt nam consectetur cupiditate doloribus nostrum beatae est
-                                                    sint dolores quo fugit voluptates repellendus dolorum eaque, 
-                                                    ipsam cumque explicabo minus provident repellat.
+                                                    </p>
+                                                    
+                                                    <p>
+                                                      As a Writer with keen in the world of solving problems, I developed this Blog with the MERN stack,
                                                     <br />
                                                     Lorem ipsum dolor sit amet consectetur adipisicing elit. S
                                                     unt nam consectetur cupiditate doloribus nostrum beatae est
@@ -59,8 +55,8 @@ const About = () => {
                                 </div>
 
                                 <div>
-                                <button> 
-                                  <Link to="/posts/">
+                                <button className='blog-btn'> 
+                                  <Link to="/posts/" className='link'>
                                       Go To Blog
                                   </Link>
                             
