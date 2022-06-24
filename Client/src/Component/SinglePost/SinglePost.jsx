@@ -1,5 +1,6 @@
 import './SinglePost.css';
-import  love from '../../Assests/love.jpg';
+import { useAuth } from '../../Hooks/useAuth';
+import   {EditOutlined } from '@material-ui/icons';
 import { CardList } from '../Index';
 import { useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
@@ -8,14 +9,19 @@ import { useState } from 'react';
 // import { Comment, MenuBook, Person, Timer } from '@material-ui/icons';
 
 const SinglePost = () => {
+  const {user } = useAuth()
   const PF =  "http://localhost:5000/images/";
   const [cat, setCats] =  useState([])
-  console.log(cat)
+  const [updatemode, setUpdateMode ] =  useState(false)
+  const [title, setTitle ] =  useState('')
+  const [desc, setDesc ] =  useState('')
+  // console.log(cat)
 
   useEffect(() => {
       const getCats = async () => {
            const res = await axios .get(`/posts`);
             console.log(res.data);
+
       }
       getCats()
   }, [])
@@ -36,9 +42,25 @@ const SinglePost = () => {
 
           console.log(res.data);
           setPost(res.data);
+          setTitle(res.data.title);
+          setDesc(res.data.desc);
       };
       getDetails();  
   }, [location])
+
+
+  const handleUpdate = async() => {
+     try {
+      const res = await axios.put(`/posts/${post._id}`, {
+        username: user.username,
+        title,
+        desc
+      })  
+      setUpdateMode(false)
+     } catch (error) {
+      console.log(error);
+     }
+  }
 
 
   return (
@@ -49,7 +71,12 @@ const SinglePost = () => {
               <div className='img--tag--div'>
                   <img src={PF + post.photo} alt="" className='post--img'/>
   
-                   <p className='post--title'> {post.title} </p>
+                   {updatemode 
+
+                    ? <input type='text' value={title} className='post--title' onChange={(e) => setTitle(e.target.value)}  />
+                    : <p className='post--title'> {title} </p>
+
+                   }
   
              
               </div>
@@ -65,15 +92,28 @@ const SinglePost = () => {
              <p className='post--date'>
              {new Date(post.createdAt).toDateString() }</p> 
                 
-              
+                
+            {user && 
+              <button className="widgetSmButton" onClick={() => setUpdateMode(true)}> 
+              <EditOutlined />
+              </button> }
             </div>
 
           
-                    <p className='post--content'> 
-                            {
-                                post.desc
-                            }
-                    </p>
+                {updatemode
+                  ? <textarea className='post--content' value={desc} onChange={(e) => setDesc(e.target.value)}  />
+
+                  :<p className='post--content'>  {desc }  </p>
+
+                }
+
+                {updatemode &&
+
+                  <button className='update--btn' onClick={handleUpdate}>
+                        Update
+                  </button>
+                  
+                }
                     
             </div>
 
@@ -89,7 +129,7 @@ const SinglePost = () => {
                     </div>
 
                 <textarea className='post--comment' name="" id="" cols="50" rows="5" placeholder='Write A comment'>
-                  
+               
                 </textarea>
 
                 <button className='post--comment--btn'> Submit </button>

@@ -38,7 +38,7 @@ const id =   post._id
                           <p>{post.title} </p>
                     <div>
                                    
-                                    <button className="widgetSmButton" onClick={EditPost}>
+                                    <button className="widgetSmButton">
                                     <EditOutlined />
                                     </button>
                                 
