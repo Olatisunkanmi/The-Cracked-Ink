@@ -1,15 +1,19 @@
 import React from 'react'
-import './Header.css'
+
 import {Link } from 'react-router-dom'
 
 const Header = () => {
   return (
-    <div className="container">
+    <div className="container max-w-6xl mt-2 px-5 p-3 mx-auto text-center">
 
       <Link to='/posts/' className='link'>
-      <h2 className='header--title'>Cracked Ink</h2>
+      
+      <h2 className='text-5xl font-bold text-center'>Cracked Ink</h2>
       </Link>
-            <p className='header--para'>...Read, Write and Read a little bit More</p>
+            <p className='italic text-xl font-bold mt-2'>
+            ...Read, Write 
+            <span className='text-veryLightBrown '> and Read a little </span>
+             bit More !</p>
     </div>
   )
 }

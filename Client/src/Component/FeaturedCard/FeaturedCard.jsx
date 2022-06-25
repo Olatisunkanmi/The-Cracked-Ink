@@ -5,9 +5,9 @@ const FeaturedCard = ({posts}) => {
  
   console.log(posts);
   return (
-    <>
+    <div className="mt-2"> 
 
-    <h3 className="Featured--Articles"> Featured Articles </h3>
+    <h3 className="Featured--Articles text-veryLightBrown font-bold"> Featured Articles </h3>
     
    <div className='container--FeaturedCard'>
         {
@@ -17,10 +17,15 @@ const FeaturedCard = ({posts}) => {
         }
      
    
+        <button className='m-5 p-3 font-bold bg-black text-white hover:bg-veryLightBrown hover:text-black'> 
+      Older Posts 
+      </button>
 
    </div>
-    <button> Older Post </button>
-    </>
+
+
+
+    </div>
    
  
   )

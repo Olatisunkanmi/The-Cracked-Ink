@@ -1,39 +1,42 @@
-
-import './Topbar.css';
-// import {  NightsStay } from '@material-ui/icons';
+import {Link } from 'react-router-dom'
 
 const Topbar = () => {
   return (
-        <>
+    
         
-            <div className="top">
-                    <div className="top--Left">Igbasan Olasunkanmi</div>
+            <div className="hidden flex flex-col-reverse  md:flex md:flex-row justify-center mt-5 justify-between bg-veryLightBrown text-black">
+                    <div className=" p-6">
+                                <a 
+                                href='/'
+                                className="hidden text-xl text-black font-bold">
+                                Igbasan Olasunkanmi</a>
+                    </div>
 
-                    <div className="top--Center">
-                        <ul className="top--center-ul">
-                              <li className="top--center-list">Home</li>
-                              <li className="top--center-list">Read-Ups</li>
-                              <li className="top--center-list">Poems</li>
-                              <li className="top--center-list">Books</li>
-                              <li className="top--center-list">About</li>
-                        </ul>
+                    <div className="p-6 ">
+                        <div className="flex space-x-12 font-bold">
+                        <a href="/home" className="">Home </a>
+                        <a href="#" className="hidden">Read-Ups  </a>
+                        <a href="/posts" className="">Write ups </a>
+                        <a href="#" className="hidden">Our Authors  </a>
+                        <a href="#" className="">Contact Us  </a>
+                        <a href="#" className=""> About Us </a>
+                      
+                        </div>
                     </div>
 
 
 
-                    <div className="top--Right">
-                        <ul className="top--Right-ul">
-                            <li className="top--Right-list"> Login </li>
-                            <li className="top--Right-list"> Read Technical Articles  </li>
-                        </ul>
+                    <div className="p-6 space-x-5">
+                            <Link to='/admin-login'>
+                                    <a 
+                                    href="/admin-login" 
+                                    class="p-3 px-6 pt-2 text-black bg-white rounded-full baseline">
+                                    Login as Admin 
+                                    </a>
+                            </Link>
                     </div>
             </div>
-        </>
-       
-  
-
-    
-   
+        
   )
 }
 

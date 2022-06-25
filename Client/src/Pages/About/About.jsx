@@ -11,7 +11,7 @@ const About = () => {
     <>
     <Header />
     <div class="body--container">
-
+    
               
                 <div class="img--div">
                 <img src={profileImage} alt="" class="about-me-img" />
@@ -32,7 +32,7 @@ const About = () => {
                                                     <div class="about--me--details">
                                                     <p class="about--me--details--para">
                                                     Hello there and Welcome to my blog. <br />
-                                                    My name is <span>Olasunkanmi. </span>
+                                                    My name is <span className=''>Olasunkanmi. </span>
                                                     I am a Writer, with actute mind for details. A Self taught backend Software Developer, who is very passionate about learning, as learning never ends.
                                                     I am also very dedicated to my work.
                                                     <br />

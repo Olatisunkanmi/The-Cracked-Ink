@@ -22,19 +22,6 @@
     cursor: pointer;
 }
 
-.CardInfo{
-    margin: 10px;
-    /* display: flex; */
-    flex-direction: column;
-    text-align: right;
-
-}
-
-.CardTitle{
-    font-weight: 300;
-    font-family: serif;
-   
-}
 
 
 
@@ -50,8 +37,6 @@
 }
 
 .CardDesc{
-   
-   
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
@@ -63,6 +48,3 @@
 
 }
 
-.cardBtn{
-    margin: 25px;
-}

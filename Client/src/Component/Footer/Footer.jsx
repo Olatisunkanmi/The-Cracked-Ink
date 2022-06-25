@@ -1,59 +1,68 @@
 import React from 'react';
-import './Footer.css'
-// import { Instagram } from '@material-ui/icons';
+import { GitHub, Instagram, LinkedIn, Mail, Phone, Twitter } from '@material-ui/icons';
 
 const Footer = () => {
   return (
     <>
-        <div className="footer-container">
-            <div className="row">
+        <footer className='bg-veryLightBrown'>
+
+        <div  
+         className="container p-1 -space-x-10 mx-auto flex flex-col  items-center justify-around md:flex md:flex-row">
             
-            <div className="footer--tags">
-                        <h4 className='footer--heads'>Tags</h4>
-                            <div className="Tags--list-div">
-                                <p className='tags-list'>Earth</p>
-                                <p className='tags-list'>Dance</p>
-                                <p className='tags-list'>Old - buildings</p>
-                                
-                                
-                            </div>
-                    </div>
+                                <div className="m-5 font-bold text-l">
+                                    <h4 className=''>Subscribe Via Email.</h4>
+
+                                    <p className=''>Receive notifications of new posts.</p>
+
+                                    <div className='flex flex-col font-left mt-2'>
+                                                <input 
+                                                type="text" 
+                                                class="flex-1 px-5 rounded-full focus:outline-none" 
+                                                placeholder="Enter Your mail"/>
+
+                                                <div class="flex mt-3 justify-center md:justify-start"> 
+                                                <a 
+                                                href="#" 
+                                                class="p-3 px-6 pt-2 text-black bg-white rounded-full baseline">
+                                                    Subscribe 
+                                                </a>
+                                            </div>
+                                    </div>
 
 
-
-                    <div className="footer--Sub">
-                        <h4 className='footer--heads'>Subscribe Via Email</h4>
-                        <p className='footer--noti'>Receive notifications of new posts.</p>
-                        <input type="text"  
-                        placeholder='Enter Your E-mail Address'
-                        className='search--bar'/>
-
-                        <button className='footer--subscribe'> Subscribe </button>
-                    </div>
+                                </div>
 
 
-                    <div className="footer--Cats">
-                        <h4 className='footer--heads'>Categories</h4>
-                            <ul>
-                                <li>Lifestyle</li>
-                                <li>Travel</li>
-                                <li>Travel</li>
-                                <li>Travel</li>
-                               
-                            </ul>
-                    </div>
+                                <div className="hidden md:block m-5 font-bold text-l space-y-3">
+                                    <h4 className=''>Categories</h4>
+                                        <div className='space-y-1 flex flex-col'>
+                                                <a href=""> Lifestyle </a>
+                                                <a href=""> Travel </a>
+                                                <a href=""> Travel </a>
+                                                <a href=""> Travel </a>
+                                        </div>
+                                </div>
                 
-            </div>
             
 
-        <div className='copyright'>
-            
-            <p>  2020 | All Rights Reserved</p>
-            
-           
+                    <div className='space-y-0.5'>
+                            <p className='text-lg font-bold'> Cracked Inc.</p>
+                        <div className='space-x-2'>
+                        <Instagram />
+                        <Twitter />
+                        <GitHub />
+                        <LinkedIn />
+                        <Phone />
+                        <Mail />
+                        </div>
+                        <p className='font-bold'>  2022 | All Rights Reserved.</p>
+                        
+                    
+                    </div>
+                        
         </div>
-            
-        </div>
+
+    </footer>
     </>
   )
 }

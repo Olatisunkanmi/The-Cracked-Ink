@@ -1,11 +1,6 @@
-import {React}  from 'react';
-import {Link } from "react-router-dom"
-
+import {Link } from "react-router-dom";
+import {  CalendarTodayRounded} from  '@material-ui/icons'
 import './FirstCard.css';
-import gamble from "../../Assests/sea.jpg";
-import { useState } from 'react';
-import { useEffect } from 'react';
-
 
 
 const FirstCard = ({newPost}) => {
@@ -14,37 +9,39 @@ const FirstCard = ({newPost}) => {
 
         // console.log(newPost);
   return (
-    <div className='FirstCard--container'>
+    <div className='max-w-6xl px-5 mx-auto mt-32 text-center'>
 
 
-        <div className=''>
+        <div className='text-xl font-bold text-center flex flex-col  items-center p-6 m-10 -mt-9 -mb-2'>
             <img src={PF + newPost.photo}
-            alt="image"  className='FirstCard--img'/>
+            alt="image"  
+            className='rounded-full'
+            width='850px'/>
+
+      </div>
+
+
             
-                    <div className="FirstCard--att--div">
+                    <div className="flex flex-col items-center">
 
-                        <div className='FirstCard--date--cat'>
-                        <span className="FirstCard--date">{new Date(newPost.createdAt).toDateString() }</span>
+                                          <div className='flex items-center font-bold mb-10'>
+                                                <CalendarTodayRounded />
+                                                <span className="">{`${new Date(newPost.createdAt).toDateString()}.` }</span>
 
-                              <div className='FirstCard--cat'>
-                              </div>
-                        </div>
-                    <span className="FirstCard--title">{newPost.title}</span>
+                                          </div>
 
-                    <span className="FirstCard--desc">
-                          {newPost.desc}
 
-                    </span>
-                    <button className='FirstCard--btn'> 
-                              <Link to={`/posts/${newPost._id}`}>
-                              Read More 
-                              </Link>
-                    </button>
+                                    <span className="FirstCard--title">{newPost.title}</span>
+
+                                    <span className="FirstCard--desc">
+                                          {newPost.desc}
+                                    </span>
+                                    <button className='m-5 p-3 font-bold bg-black text-white hover:bg-veryLightBrown hover:text-black'> 
+                                                <Link to={`/posts/${newPost._id}`}>
+                                                Read More 
+                                                </Link>
+                                    </button>
                     </div>
-
-            
-           
-        </div>
 
     </div>
   )
