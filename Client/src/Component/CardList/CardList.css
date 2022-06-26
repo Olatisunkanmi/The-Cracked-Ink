@@ -24,18 +24,6 @@
 
 
 
-
-.CardList--date--cat{
-    margin-top: 5px;
-    margin-bottom: 5px;
-    text-align: right;
-}
-
-.CardDate, .CardCat {
-    margin: 6.4px;
-    font-size: 12.3px;
-}
-
 .CardDesc{
     overflow: hidden;
     text-overflow: ellipsis;

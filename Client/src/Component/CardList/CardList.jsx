@@ -1,6 +1,5 @@
-// import './CardList.css';
+import './CardList.css';
 import {Link } from "react-router-dom"
-import {CalendarTodayRounded }from'@material-ui/icons';
 
  
 
@@ -10,57 +9,62 @@ const CardList = ({post} ) => {
   
 
   return (
-    <div className='flex flex-col md:flex md:flex-row'>
+      <>
+      
+    <div className='CardList bg-gray-100'>
+            <img 
+                src={PF + post.photo} 
+                alt="this is your picture"  
+                className='CardImg'
+                
+              />
 
-                                  <div>
-                                        <img 
-                                        src={PF + post.photo} 
-                                        alt="this is your picture"  
-                                        className='' 
-                                        width='50px'
-                                        />
+                    <div className="mt-5">
+                                <div className='text-center'>
+                                      <span 
+                                      className="items-center font-bold text-xl p-3">
+                                              <Link to={`/posts/${post._id}`}>
+                                                      {post.title}
+                                              </Link>
+                                      </span>
+                                </div>
+                                
+                        <div className='m-2 text-center text-veryLightBrown'>
+                                  <span 
+                                  className="">{`${new Date(post.createdAt).toDateString() }.`}
+                                  </span>
+
+                                  <div 
+                                  className="CardCat">
+                                            <p> {post.categories }</p>
+                                            {
+                                              post.categories.map(c => (
+                                                <span> {c.name}</span>
+                                              ))
+                                            }
                                   </div>
+                        </div>
+                  
 
-                              <div className="">
-                                          <span className="">
-                                          <Link to={`/posts/${post._id}`}>
-                                          {post.title}
-                                          </Link>
-                                          </span>
+                                  <span 
+                                        className="CardDesc font-bold">
+                                      {post.desc}
+                                  </span>
 
+                                <button 
+                                      className='mt-5 p-2 text-black bg-veryLightBrown'> 
+                                            <Link 
+                                                  to={`/posts/${post._id}`}>
+                                                  Read More 
+                                              </Link>
+                                </button>
 
-                                        
-                                          <div className='flex items-center font-bold mb-10'>
-                                          <CalendarTodayRounded />
-                                          <span className="">{`${new Date(post.createdAt).toDateString()}.` }</span>
-
-                                         </div>
-
-                                      
-                                          <p> {post.categories }</p>
-                                          {
-                                          // post.categories.map(c => (
-                                          //   <span> {c.name}</span>
-                                          // ))
-                                          }
-                                         
-                                      
-
-
-                                          <span className="">
-                                          {post.desc}
-                                          </span>
-
-
-                                          <button className=''>
-                                          <Link to={`/posts/${post._id}`}>
-                                          Read More 
-                                          </Link>
-                                          </button>
-                              </div>
-
-     
+                    </div>
     </div>
+
+
+    </>
+
   )
 }
 

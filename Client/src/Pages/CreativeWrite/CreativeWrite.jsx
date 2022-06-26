@@ -2,7 +2,7 @@ import { Topbar, FeaturedCard, Header, Footer, FirstCard } from "../../Component
 import axios from "axios"
 import { useEffect } from "react"
 import { useState } from "react"
-import { useLocation } from "react-router-dom";
+
 
 // If page is yet to return render loading
 
