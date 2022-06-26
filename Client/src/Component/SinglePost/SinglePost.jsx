@@ -118,20 +118,36 @@ const SinglePost = () => {
 
             <hr />
 
-            <div className="text-left flex flex-col items-center p-6 m-5">
-                <h3 className='post--comment--header'>Leave a Reply</h3>
-                <p>Your Email will not be published. Required Fields are marked <span> * </span></p>
-                
-                <div className='post--comment-input'>
-                <input type="text" id="" placeholder='Your Name' className='comment--name'/>
-                <input type="text" id="" placeholder='Your Email Address'   className='comment--email'/>
-                    </div>
-
-                <textarea className='post--comment' name="" id="" cols="50" rows="5" placeholder='Write A comment'>
-               
-                </textarea>
-
-                <button className='post--comment--btn'> Submit </button>
+            <div className="flex flex-col flex-wrap font-bold ">
+            
+                  <div className='flex flex-col max-w-6xl items-center align-center text-left justify-start space-y-5 p-5'>
+                            <div className=''>
+                            <h3 className='post--comment--header'>Leave a Reply</h3>
+                            <p>Your Email will not be published. Required Fields are marked <span> * </span></p>
+                            </div>
+                            
+                            <div className='flex flex-col space-y-5 '>
+                            <input type="text" id="" placeholder='Your Name' className='comment--name'/>
+                            <input type="text" id="" placeholder='Your Email Address'   className='comment--email'/>
+            
+                            <textarea 
+                            className='post--comment' 
+                            name="" id="" cols="50"
+                              rows="5" 
+                              placeholder='Write A comment'>
+                          
+                            </textarea>
+            
+                                </div>
+            
+                          
+            
+                              <div>
+                              <button className='m-5 p-3 font-bold bg-black text-white hover:bg-veryLightBrown hover:text-black'> 
+                             Post Comment
+                              </button>
+                              </div>
+                  </div>
             </div>    
             
             {
