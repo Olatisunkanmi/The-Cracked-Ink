@@ -1,7 +1,6 @@
 import './SinglePost.css';
 import { useAuth } from '../../Hooks/useAuth';
 import   {EditOutlined } from '@material-ui/icons';
-import { CardList } from '../Index';
 import { useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 import axios from 'axios';
@@ -65,61 +64,61 @@ const SinglePost = () => {
 
   return (
     <> 
-        <div className="post--container">
+        <div className="flex flex-col">
 
                     
-              <div className='img--tag--div'>
-                  <img src={PF + post.photo} alt="" className='post--img'/>
-  
-                   {updatemode 
-
-                    ? <input type='text' value={title} className='post--title' onChange={(e) => setTitle(e.target.value)}  />
-                    : <p className='post--title'> {title} </p>
-
-                   }
-  
-             
-              </div>
-            <hr />
-
-            <div className="post--content-div">       
-                            <div className='post--cat'>
-                                    
-                            </div>
-
-            <div className='post--auth--date--com'>
-            <p className='post--author'> {post.username}</p>
-             <p className='post--date'>
-             {new Date(post.createdAt).toDateString() }</p> 
-                
-                
-            {user && 
-              <button className="widgetSmButton" onClick={() => setUpdateMode(true)}> 
-              <EditOutlined />
-              </button> }
-            </div>
-
+              <div className='text-center flex flex-col  items-center p-6 m-10'>
+                          <img src={PF + post.photo} alt="" className='w-2/3
+                           text-center justify-center align-center'/>
           
-                {updatemode
-                  ? <textarea className='post--content' value={desc} onChange={(e) => setDesc(e.target.value)}  />
+                          {updatemode 
 
-                  :<p className='post--content'>  {desc }  </p>
+                            ? <input type='text' value={title} className='' onChange={(e) => setTitle(e.target.value)}  />
+                            : <p className='mt-5 p-3 text-5xl font-bold text-brightRed'> {title} </p>
 
-                }
+                          }
 
-                {updatemode &&
 
-                  <button className='update--btn' onClick={handleUpdate}>
-                        Update
-                  </button>
-                  
-                }
-                    
-            </div>
+                          <div className='mt-3 font-bold text-md'>
+                                  <p className=''> {post.username}</p>
+                                  <p className=''>
+                                  {new Date(post.createdAt).toDateString() }</p> 
+                                      
+                                      
+                                  {user && 
+                                    <button className="widgetSmButton" onClick={() => setUpdateMode(true)}> 
+                                    <EditOutlined />
+                                    </button> }
+                       </div>
+
+
+              </div>
+
+              <hr/>
+
+                        <div className="text-left flex flex-col items-center p-6 m-5">       
+                                      
+                                       <div className='max-w-7xl leading-9 text-2xl'>
+                                              {updatemode
+                                                ? <textarea className='post--content' value={desc} onChange={(e) => setDesc(e.target.value)}  />
+
+                                                :<p className='post--content'>  {desc }  </p>
+
+                                              }
+
+                                              {updatemode &&
+
+                                                <button className='update--btn' onClick={handleUpdate}>
+                                                      Update
+                                                </button>
+                                                
+                                              }
+                                       </div>
+                        </div>
 
             <hr />
 
-            <div className="post--comment--div">
+            <div className="text-left flex flex-col items-center p-6 m-5">
                 <h3 className='post--comment--header'>Leave a Reply</h3>
                 <p>Your Email will not be published. Required Fields are marked <span> * </span></p>
                 
@@ -140,9 +139,9 @@ const SinglePost = () => {
             // <CardList />
             // <CardList />
             // <CardList />
-}
+          }
 
-        </div>
+   </div>
     </>
   )
 }
