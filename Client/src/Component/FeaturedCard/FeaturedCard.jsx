@@ -7,7 +7,7 @@ const FeaturedCard = ({posts}) => {
   return (
 
     <div className="justify-center mt-20 flex flex-col items-left max-w-5xl m-auto "> 
-             <h3 className="Featured--Articles"> Featured Articles </h3>
+             <h3 className="Featured--Articles font-bold text-brightRed"> Featured Articles </h3>
     
 
       <div className='flex flex-col md:flex md:flex-row space-x-10'>

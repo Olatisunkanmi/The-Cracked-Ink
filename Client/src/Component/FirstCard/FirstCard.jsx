@@ -15,7 +15,7 @@ const FirstCard = ({newPost}) => {
         <div className='text-xl font-bold text-center flex flex-col  items-center p-6 m-10 -mt-9 -mb-2'>
             <img src={PF + newPost.photo}
             alt="image"  
-            className='rounded-full'
+            className='rounded'
             width='850px'/>
 
       </div>
