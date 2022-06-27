@@ -3,7 +3,7 @@ import './FeaturedCard.css'
 
 const FeaturedCard = ({posts}) => {
  
-  console.log(posts);
+
   return (
 
     <div className="justify-center mt-20 flex flex-col items-left max-w-5xl m-auto "> 
