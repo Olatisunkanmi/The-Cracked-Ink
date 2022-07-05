@@ -126,7 +126,7 @@ const SinglePost = () => {
                                               {/**Comment section */}
 
                  <div 
-                   className='flex flex-col md:flex-row text-left w-3/5 m-auto' >
+                   className='flex flex-col md:flex-row text-left w-3/5 m-auto mb-5' >
                                               
 
                                     <div 
@@ -140,22 +140,21 @@ const SinglePost = () => {
                                                                     <input type="text" id="" placeholder='Your Name' className='
                                                                    bg-black
                                                                    p-3
-                                                                   focus:text-white
-                                                                   placeholder:text-brightRed
-                                                                    '/>
+                                                                   text-white
+                                                                   placeholder:text-brightRed'/>
 
 
                                                                     <input type="text" id="" placeholder='Your Email Address'   
                                                                     className='
                                                                    bg-black
                                                                    p-3
-                                                                   focus:text-white
+                                                                   text-white
                                                                    placeholder:text-brightRed
                                                                     '/>
 
                                                                     <textarea 
                                                                     className='bg-black p-2 
-                                                                    focus:text-white
+                                                                    text-white
                                                                     placeholder:text-brightRed' 
 
                                                                     name="" id="" 
@@ -179,25 +178,37 @@ const SinglePost = () => {
 
 
                                <div 
-                                className='bg-stone-200 p-5 w-4/6'>
+                                className='bg-stone-300 p-5 w-4/6 '>
                                                 <h3 
                                                 className='text-brightRed font-bold text-xl font-mono'>Comments Sections</h3>
 
                                                 <div 
-                                                  className='mt-4'>
+                                                  className='mt-4 overflow-y-auto space-y-3 h-4/5'>
 
-                                                          <div>
+                                                         <div>
+                                                         <p className='text-lg font-bold'> Username</p>
                                                             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa doloremque placeat explicabo excepturi commodi vitae libero porro! Ipsum ratione ex cumque fugit a aperiam, repellat dolore accusamus! Veritatis, saepe laboriosam!</p>
-                                                          </div>
-                                                          <div>
-                                                            <p>Second Comments</p>
-                                                          </div>
-                                                          <div>
-                                                            <p>THird  Comments</p>
-                                                          </div>
-                                                          <div>
-                                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt reiciendis officiis sunt rerum fuga odio, beatae cumque quis exercitationem labore eligendi temporibus corporis tempora recusandae neque adipisci, molestiae a repudiandae.</p>
-                                                          </div>
+                                                         </div>
+
+
+                                                         
+                                                         <div> 
+                                                         <p className='text-lg font-bold'> Username</p>
+                                                          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa doloremque placeat explicabo excepturi commodi vitae libero porro! Ipsum ratione ex cumque fugit a aperiam, repellat dolore accusamus! Veritatis, saepe laboriosam!</p>
+                                                         </div>
+
+
+                                                         <div> 
+                                                         <p className='text-lg font-bold'> Username</p>
+                                                          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa doloremque placeat explicabo excepturi commodi vitae libero porro! Ipsum ratione ex cumque fugit a aperiam, repellat dolore accusamus! Veritatis, saepe laboriosam!</p>
+                                                         </div>
+                                                          
+                                                         <div> 
+                                                         <p className='text-lg font-bold'> Username</p>
+                                                          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa doloremque placeat explicabo excepturi commodi vitae libero porro! Ipsum ratione ex cumque fugit a aperiam, repellat dolore accusamus! Veritatis, saepe laboriosam!</p>
+                                                         </div>
+                                                          
+                                                          
                                                 </div>
                                </div>
 
