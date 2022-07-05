@@ -79,24 +79,6 @@
           margin-left: 25px;
       }
 
-      .post--comment-input{
-        margin-bottom: 20px;
-        margin-top: 20px;
-       
-       
-      }
-      .post--comment--div{
-          margin-top: 20px;
-        text-align: left;
-        
-       
-      }
-      .comment--email, .comment--name{
-          height: 20px;
-          margin-right: 10px;
-          border: none !important;
-          border-bottom: 2px solid black !important;
-      }
       
       .post--comment{
           border: none !important;
