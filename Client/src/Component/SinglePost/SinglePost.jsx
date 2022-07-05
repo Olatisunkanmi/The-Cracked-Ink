@@ -64,41 +64,43 @@ const SinglePost = () => {
 
   return (
     <> 
-        <div className="flex flex-col">
+
+    <div>
+        <div className="flex flex-col justify-around m-10">
 
                     
-              <div className='text-center flex flex-col  items-center p-6 m-10'>
-                          <img src={PF + post.photo} alt="" className='w-2/3
-                           text-center justify-center align-center'/>
-          
-                          {updatemode 
+                            <div className='text-center flex flex-col  items-center p-6 m-10'>
+                                        <img src={PF + post.photo} alt="" className='w-2/3
+                                        text-center justify-center align-center'/>
+                        
+                                        {updatemode 
 
-                            ? <input type='text' value={title} className='' onChange={(e) => setTitle(e.target.value)}  />
-                            : <p className='mt-5 p-3 text-5xl font-bold text-brightRed'> {title} </p>
+                                          ? <input type='text' value={title} className='' onChange={(e) => setTitle(e.target.value)}  />
+                                          : <p className='mt-5 p-3 text-5xl font-bold text-brightRed'> {title} </p>
 
-                          }
-
-
-                          <div className='mt-3 font-bold text-md'>
-                                  <p className=''> {post.username}</p>
-                                  <p className=''>
-                                  {new Date(post.createdAt).toDateString() }</p> 
-                                      
-                                      
-                                  {user && 
-                                    <button className="widgetSmButton" onClick={() => setUpdateMode(true)}> 
-                                    <EditOutlined />
-                                    </button> }
-                       </div>
+                                        }
 
 
-              </div>
+                                                    <div className='mt-3 font-bold text-md'>
+                                                            <p className=''> {post.username}</p>
+                                                            <p className=''>
+                                                            {new Date(post.createdAt).toDateString() }</p> 
+                                                                
+                                                                
+                                                            {user && 
+                                                              <button className="widgetSmButton" onClick={() => setUpdateMode(true)}> 
+                                                              <EditOutlined />
+                                                              </button> }
+                                                </div>
+
+
+                            </div>
 
               <hr/>
 
-                        <div className="text-left flex flex-col items-center p-6 m-5">       
+                        <div className="text-left flex flex-col items-center p-6 m-5 bg-">       
                                       
-                                       <div className='max-w-7xl leading-9 text-2xl'>
+                                       <div className='w-1/2 leading-9 text-2xl '>
                                               {updatemode
                                                 ? <textarea className='post--content' value={desc} onChange={(e) => setDesc(e.target.value)}  />
 
@@ -114,49 +116,93 @@ const SinglePost = () => {
                                                 
                                               }
                                        </div>
+
+
+                                    
                         </div>
 
-            <hr />
+                   <hr />   
+            </div>
+                                              {/**Comment section */}
 
-            <div className="flex flex-col flex-wrap font-bold ">
-            
-                  <div className='flex flex-col max-w-6xl items-center align-center text-left justify-start space-y-5 p-5'>
-                            <div className=''>
-                            <h3 className='post--comment--header'>Leave a Reply</h3>
-                            <p>Your Email will not be published. Required Fields are marked <span> * </span></p>
-                            </div>
-                            
-                            <div className='flex flex-col space-y-5 '>
-                            <input type="text" id="" placeholder='Your Name' className='comment--name'/>
-                            <input type="text" id="" placeholder='Your Email Address'   className='comment--email'/>
-            
-                            <textarea 
-                            className='post--comment' 
-                            name="" id="" cols="50"
-                              rows="5" 
-                              placeholder='Write A comment'>
-                          
-                            </textarea>
-            
-                                </div>
-            
-                          
-            
-                              <div>
-                              <button className='m-5 p-3 font-bold bg-black text-white hover:bg-veryLightBrown hover:text-black'> 
-                             Post Comment
-                              </button>
-                              </div>
-                  </div>
-            </div>    
-            
-            {
-            // <h3 className="Recent--posts"> Recent Post </h3>
-            // <CardList />
-            // <CardList />
-            // <CardList />
-          }
+                 <div 
+                   className='flex flex-col md:flex-row text-left w-3/5 m-auto' >
+                                              
 
+                                    <div 
+                                      className='bg-stone-500 p-5 flex-wrap w-2/6 space-y-2'>
+                                              <h3 className='post--comment--header text-brightRed font-bold'>Leave a Reply</h3>
+                                                <p
+                                                  className='text-sm text-white text-thin '>Your Email will not be published. Required Fields are marked <span> * </span></p>
+
+
+                                                <div className='flex flex-col space-y-5 '>
+                                                                    <input type="text" id="" placeholder='Your Name' className='
+                                                                   bg-black
+                                                                   p-3
+                                                                   focus:text-white
+                                                                   placeholder:text-brightRed
+                                                                    '/>
+
+
+                                                                    <input type="text" id="" placeholder='Your Email Address'   
+                                                                    className='
+                                                                   bg-black
+                                                                   p-3
+                                                                   focus:text-white
+                                                                   placeholder:text-brightRed
+                                                                    '/>
+
+                                                                    <textarea 
+                                                                    className='bg-black p-2 
+                                                                    focus:text-white
+                                                                    placeholder:text-brightRed' 
+
+                                                                    name="" id="" 
+                                                                      placeholder='Write A comment'>
+                                                                  
+                                                                    </textarea>
+
+                                                                      
+
+                                                                  
+
+                                                                    <div>
+                                                                      
+                                                                    <button className='p-3 font-bold  bg-black text-brightRed  
+                                                                    hover:bg-veryLightBrown hover:text-black'> 
+                                                                    Post Comment
+                                                                      </button>
+                                                                    </div>
+                                                        </div>
+                               </div>
+
+
+                               <div 
+                                className='bg-stone-200 p-5 w-4/6'>
+                                                <h3 
+                                                className='text-brightRed font-bold text-xl font-mono'>Comments Sections</h3>
+
+                                                <div 
+                                                  className='mt-4'>
+
+                                                          <div>
+                                                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa doloremque placeat explicabo excepturi commodi vitae libero porro! Ipsum ratione ex cumque fugit a aperiam, repellat dolore accusamus! Veritatis, saepe laboriosam!</p>
+                                                          </div>
+                                                          <div>
+                                                            <p>Second Comments</p>
+                                                          </div>
+                                                          <div>
+                                                            <p>THird  Comments</p>
+                                                          </div>
+                                                          <div>
+                                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt reiciendis officiis sunt rerum fuga odio, beatae cumque quis exercitationem labore eligendi temporibus corporis tempora recusandae neque adipisci, molestiae a repudiandae.</p>
+                                                          </div>
+                                                </div>
+                               </div>
+
+              </div>
+            
    </div>
     </>
   )
