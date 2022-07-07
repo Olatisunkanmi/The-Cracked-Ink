@@ -15,7 +15,9 @@ const SinglePost = () => {
   const [updatemode, setUpdateMode ] =  useState(false)
   const [title, setTitle ] =  useState('')
   const [desc, setDesc ] =  useState('')
-  const [comment, setComment] = useState([])
+  const [post, setPost ] = useState ({})
+
+
   // console.log(cat)
 
   useEffect(() => {
@@ -34,7 +36,6 @@ const SinglePost = () => {
 
   const lot = useLocation()
 //   console.log(lot);
-  const [post, setPost ] = useState ({})
 
   
   useEffect(() => {
@@ -78,7 +79,7 @@ const SinglePost = () => {
         email: mail.value,
         comment: comment.value
         })
-        setComment(res.data)
+        setPost(res.data)
         
       } catch (error) {
           console.log(error);
@@ -223,14 +224,7 @@ const SinglePost = () => {
 
                                                          <div>
                                                          <p className='text-lg font-bold'> Username</p>
-                                                           {
-                                                            comment.map((cur) => (
-                                                              <p>
-                                                           
-                                                               {cur}
-                                                                </p>
-                                                            ))
-                                                           }
+                                                       
                                                          </div>
                                                 </div>
                                </div>
