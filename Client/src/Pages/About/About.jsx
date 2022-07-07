@@ -1,4 +1,4 @@
-import './About.css';
+// import './About.css';
 import {Link } from "react-router-dom"
 import {Header } from '../../Component/Index';
 import profileImage from '../../Assests/sk.jpg';
@@ -8,84 +8,89 @@ import {Facebook, GitHub, Instagram, LinkedIn, Twitter } from '@material-ui/icon
 const About = () => {
  
   return (
-    <>
+    <div>
     <Header />
-    <div class="body--container">
+
+
+    <div className="flex flex-col w-full md:flex-row m-auto items-center justify-around ">
     
               
-                <div class="img--div">
-                <img src={profileImage} alt="" class="about-me-img" />
+                <div className="md:w-2/5 m-auto justify-end flex">
+                <img src={profileImage} alt="" className=" md:w-4/5 " />
 
                 </div>
 
-                <div class="details--div">
+                <div className=" w-full md:w-3/5 p-10 flex flex-col">
 
-                                <div class="top--details">
 
-                                        <div class="header">
-                                        <h3 class="header--h3">About </h3>
-
-                                        <hr class="header--hr"/>  
+                                        <div className="flex flex-row items-center">
+                                        <h3 className="text-2xl font-serif ">About Me </h3>
+                                        <hr 
+                                        className='w-1/2 border-2 border-veryLightBrown ml-10'/>  
                                         </div>
 
-                                        <div class="top--details--div">
-                                                    <div class="about--me--details">
-                                                    <p class="about--me--details--para">
+                                        <div className="mt-5 max-w-2xl ">
+                                                
+                                                    <p className="font-mono text-xl leading-relaxed">
                                                     Hello there and Welcome to my blog. <br />
-                                                    My name is <span className=''>Olasunkanmi. </span>
-                                                    I am a Writer, with actute mind for details. A Self taught backend Software Developer, who is very passionate about learning, as learning never ends.
-                                                    I am also very dedicated to my work.
+                                                    My name is <span className='font-bold text-black text-1xl'>Olasunkanmi. </span>
+                                                    I am a Full-Stack Developer as well as a Creative Writer.
+                                                    Before I tell you about myself, something occurred to me recently and I would like to tell you about it 
                                                     <br />
-                                                    </p>
-                                                    
-                                                    <p>
-                                                      As a Writer with keen in the world of solving problems, I developed this Blog with the MERN stack,
                                                     <br />
-                                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. S
-                                                    unt nam consectetur cupiditate doloribus nostrum beatae est
-                                                    sint dolores quo fugit voluptates repellendus dolorum eaque, 
-                                                    ipsam cumque explicabo minus provident repellat.
-                                                    With almost a year of experience as a developer,
-                                                    I have acquired the skills and knowledge
-                                                    necessary to make your project a success. I am open to Internship and Junior positions.
+                                                    It was beyond midnight, 1:30 AM to be exact.
+                                                    Sitting across from me on the glass-topped dining table was my brother-in-law.
+                                                    We'd been up all night while he tested a company's security system for vulnerabilities.
+                                                    I sat across from him, juggling between codes and coffee. Right there, I saw a reflection of myself !! .
+                                                    In a few years, that would still be me
+                                                    staying up all night again, A father and Husband (probably ) but older for sure. 
+                                                    <br />
+                                                    We are frequently so fixated on who we want to be that we lose sight of practically everything else.
+                                                    Like people who would always admire us for who we are,those who would make sure we never have as much as a scowl on our face.
+                                                    It was then that I decided to start a blog.
+                                                    "My own corner," I murmured to myself.
+                                                    A place where I can simply appreciate and ponder on everything around me. 
                                                     </p>
-                                                    </div>
+                                                   
 
                                         </div>
-                                </div>
+                      
 
                                 <div>
-                                <button className='blog-btn'> 
+                                <button className='mt-10 border-4 p-3 bg-veryLightBrown rounded-lg font-bold' > 
                                   <Link to="/posts/" className='link'>
                                       Go To Blog
                                   </Link>
                             
                                  </button>
-                                <p>Enough With the boring stuffs, I promise you are going to love it there.</p>
-                        </div>
+                                <p className="">Enough With the boring stuffs, I promise you are going to love it there.</p>
+                            </div>
             </div>
 
 
 </div>
 
 <footer>
-            <div className="wrapper--container">
+            <div className="">
 
-                        <div className="contact--div">
-                        <button className='contact--btn'>Contact Me!</button>
+                        <div className="">
+                        <button className=''>Contact Me!</button>
 
-                        <button> 
-                                  <Link to="/admin-login/edit">
-                                   Login as Admin
-                                  </Link>
-                            
-                                 </button>
+                      
                         <p>Everything Begins with an Hello !</p>
                         </div>
 
-                        <div className="social--icons">
-                            
-                            
+                        <div className="">
+
+                        </div>
+
+
+                        <div>
+                              <button> 
+                              <Link to="/admin-login/edit">
+                              Login as Admin
+                              </Link>
+                            </button>
                         </div>
                         
             
@@ -95,7 +100,7 @@ const About = () => {
 
 
     
-    </>
+    </div>
   )
 }
 
