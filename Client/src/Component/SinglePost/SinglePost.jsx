@@ -59,6 +59,7 @@ const SinglePost = () => {
         desc
       })  
       setUpdateMode(false)
+
      } catch (error) {
       // console.log(error);
      }
@@ -136,7 +137,7 @@ const SinglePost = () => {
                                       
                                        <div className='w-full md:w-2/3 leading-9 text-1xl md:text-xl font-serif'>
                                               {updatemode
-                                                ? <textarea className='post--content' value={desc} onChange={(e) => setDesc(e.target.value)}  />
+                                                ? <textarea className='w-full h-full' value={desc} onChange={(e) => setDesc(e.target.value)}  />
 
                                                 :<p className='first-letter:ml-6 first-letter:text-4xl leading-loose'>  {desc }  </p>
 
@@ -144,7 +145,11 @@ const SinglePost = () => {
 
                                               {updatemode &&
 
-                                                <button className='' onClick={handleUpdate}>
+                                                <button 
+                                                className='p-3 font-bold  bg-black text-brightRed  
+                                                hover:bg-veryLightBrown hover:text-black' 
+
+                                                onClick={handleUpdate}>
                                                       Update
                                                 </button>
                                                 
