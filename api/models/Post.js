@@ -11,17 +11,11 @@ const PostSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-
     photo: {
       type: String,
       required: false,
     },
     
-    creator :{
-      type: String,
-      required: false,
-
-    },
     username: {
       type: String,
       required: false,
@@ -30,16 +24,12 @@ const PostSchema = new mongoose.Schema(
       type: Array,
       required: false,
     },
-
     comments: {
             type: Array,
             required: false,
     },
 
-    likes : {
-      type: Number,
-      required: false,
-    }
+    
   },
   { timestamps: true }
 );
