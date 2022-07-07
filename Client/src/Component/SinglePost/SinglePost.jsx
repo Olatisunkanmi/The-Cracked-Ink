@@ -15,16 +15,17 @@ const SinglePost = () => {
   const [updatemode, setUpdateMode ] =  useState(false)
   const [title, setTitle ] =  useState('')
   const [desc, setDesc ] =  useState('')
+  const [comment, setComment] = useState([])
   // console.log(cat)
 
   useEffect(() => {
       const getCats = async () => {
            const res = await axios .get(`/posts`);
             // console.log(res.data);
-
       }
       getCats()
   }, [])
+
 
    // getting the Id of the post
 //    so all post and open on a new page in repect to their ids 
@@ -48,6 +49,7 @@ const SinglePost = () => {
       getDetails();  
   }, [location])
 
+  console.log(post);
 
   const handleUpdate = async() => {
      try {
@@ -76,13 +78,22 @@ const SinglePost = () => {
         email: mail.value,
         comment: comment.value
         })
-      
-        
+        setComment(res.data)
         
       } catch (error) {
           console.log(error);
       }
   }
+
+  // useEffect(() => {
+  //     const UpdateComments = 
+  
+  //   return () => {
+  //     second
+  //   }
+  // }, [])
+  
+  
 
 
   return (
@@ -212,28 +223,15 @@ const SinglePost = () => {
 
                                                          <div>
                                                          <p className='text-lg font-bold'> Username</p>
-                                                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa doloremque placeat explicabo excepturi commodi vitae libero porro! Ipsum ratione ex cumque fugit a aperiam, repellat dolore accusamus! Veritatis, saepe laboriosam!</p>
+                                                           {
+                                                            comment.map((cur) => (
+                                                              <p>
+                                                           
+                                                               {cur}
+                                                                </p>
+                                                            ))
+                                                           }
                                                          </div>
-
-
-                                                         
-                                                         <div> 
-                                                         <p className='text-lg font-bold'> Username</p>
-                                                          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa doloremque placeat explicabo excepturi commodi vitae libero porro! Ipsum ratione ex cumque fugit a aperiam, repellat dolore accusamus! Veritatis, saepe laboriosam!</p>
-                                                         </div>
-
-
-                                                         <div> 
-                                                         <p className='text-lg font-bold'> Username</p>
-                                                          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa doloremque placeat explicabo excepturi commodi vitae libero porro! Ipsum ratione ex cumque fugit a aperiam, repellat dolore accusamus! Veritatis, saepe laboriosam!</p>
-                                                         </div>
-                                                          
-                                                         <div> 
-                                                         <p className='text-lg font-bold'> Username</p>
-                                                          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa doloremque placeat explicabo excepturi commodi vitae libero porro! Ipsum ratione ex cumque fugit a aperiam, repellat dolore accusamus! Veritatis, saepe laboriosam!</p>
-                                                         </div>
-                                                          
-                                                          
                                                 </div>
                                </div>
 
