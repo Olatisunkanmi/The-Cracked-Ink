@@ -1,4 +1,4 @@
-import { useAuth } from '../../Hooks/useAuth';
+ import { useAuth } from '../../Hooks/useAuth';
 import   {EditOutlined } from '@material-ui/icons';
 import { useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
@@ -126,12 +126,13 @@ const SinglePost = () => {
                                                               </button> }
                                                 </div>
 
-
+    <hr 
+                className='w-1/2  mt-10 border-2 border-veryLightBrown'/>
                             </div>
 
-              <hr/>
+          
 
-                        <div className="text-left flex justify-center p-2 m-5">       
+                        <div className="text-left flex justify-center p-2 m-2 -mt-7">       
                                       
                                        <div className='w-full md:w-2/3 leading-9 text-1xl md:text-xl font-serif'>
                                               {updatemode
@@ -151,19 +152,21 @@ const SinglePost = () => {
                                        </div>
 
 
-                                    
+                                      
                         </div>
 
-                   <hr />   
-         
+            
+              <hr 
+                   className='w-1/2  my-10 border-2 border-veryLightBrown m-auto'/>  
                                               {/**Comment section */}
 
                  <div 
                    className='flex flex-col md:flex-row text-left w-3/5 m-auto mb-5' >
                                               
+              
 
                                     <div 
-                                      className='bg-stone-500 p-5 flex-wrap w-2/6 space-y-2'>
+                                      className='bg-stone-500 p-5 flex-wrap w-full md:w-2/6 space-y-2'>
                                               <h3 className='post--comment--header text-brightRed font-bold'>Leave a Reply</h3>
                                                 <p
                                                   className='text-sm text-white text-thin '>Your Email will not be published. Required Fields are marked <span> * </span></p>
@@ -213,7 +216,7 @@ const SinglePost = () => {
 
 
                                <div 
-                                className='bg-stone-300 p-5 w-4/6 '>
+                                className='bg-stone-300 w-full p-5 md:w-4/6 '>
                                                 <h3 
                                                 className='text-brightRed font-bold text-xl font-mono'>Comments Sections</h3>
 
