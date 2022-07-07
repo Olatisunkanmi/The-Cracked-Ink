@@ -8,6 +8,7 @@ import { useState } from 'react';
 // import { Comment, MenuBook, Person, Timer } from '@material-ui/icons';
 
 const SinglePost = () => {
+
   const {user } = useAuth()
   const PF =  "http://localhost:5000/images/";
   const [cat, setCats] =  useState([])
@@ -19,7 +20,7 @@ const SinglePost = () => {
   useEffect(() => {
       const getCats = async () => {
            const res = await axios .get(`/posts`);
-            console.log(res.data);
+            // console.log(res.data);
 
       }
       getCats()
@@ -28,7 +29,7 @@ const SinglePost = () => {
    // getting the Id of the post
 //    so all post and open on a new page in repect to their ids 
   const location = useLocation().pathname.split('/')[2]
-  console.log(`${location} loca`);
+  // console.log(`${location} loca`);
 
   const lot = useLocation()
 //   console.log(lot);
@@ -39,7 +40,7 @@ const SinglePost = () => {
       const getDetails = async () => {
           const res = await axios.get(`/posts/${location}`);    
 
-          console.log(res.data);
+          // console.log(res.data);
           setPost(res.data);
           setTitle(res.data.title);
           setDesc(res.data.desc);
@@ -57,8 +58,30 @@ const SinglePost = () => {
       })  
       setUpdateMode(false)
      } catch (error) {
-      console.log(error);
+      // console.log(error);
      }
+  }
+
+  const postComment = async () => {
+    const username =  document.querySelector('#username');
+    const mail =  document.querySelector('#email');
+    const comment =  document.querySelector('#comment');
+        console.log(username.value);
+      console.log(location);
+
+
+      try {
+        const res = await axios.put(`/comment/${location}`, {
+          username: username.value,
+        email: mail.value,
+        comment: comment.value
+        })
+      
+        
+        
+      } catch (error) {
+          console.log(error);
+      }
   }
 
 
@@ -67,12 +90,12 @@ const SinglePost = () => {
 
     <div>
         <div className="flex flex-col justify-around m-10">
-
+'
                     
                             <div className='text-center flex flex-col  items-center p-6 m-10'>
                                         <img src={PF + post.photo} alt="" className='w-2/3
                                         text-center justify-center align-center'/>
-                        
+                        '
                                         {updatemode 
 
                                           ? <input type='text' value={title} className='' onChange={(e) => setTitle(e.target.value)}  />
@@ -137,14 +160,14 @@ const SinglePost = () => {
 
 
                                                 <div className='flex flex-col space-y-5 '>
-                                                                    <input type="text" id="" placeholder='Your Name' className='
+                                                                    <input type="text" id="username" placeholder='Your Name' className='
                                                                    bg-black
                                                                    p-3
                                                                    text-white
                                                                    placeholder:text-brightRed'/>
 
 
-                                                                    <input type="text" id="" placeholder='Your Email Address'   
+                                                                    <input type="text" id="email" placeholder='Your Email Address'   
                                                                     className='
                                                                    bg-black
                                                                    p-3
@@ -153,11 +176,12 @@ const SinglePost = () => {
                                                                     '/>
 
                                                                     <textarea 
+                                                                    id="comment"
                                                                     className='bg-black p-2 
                                                                     text-white
                                                                     placeholder:text-brightRed' 
 
-                                                                    name="" id="" 
+                                                                    name=""
                                                                       placeholder='Write A comment'>
                                                                   
                                                                     </textarea>
@@ -169,7 +193,8 @@ const SinglePost = () => {
                                                                     <div>
                                                                       
                                                                     <button className='p-3 font-bold  bg-black text-brightRed  
-                                                                    hover:bg-veryLightBrown hover:text-black'> 
+                                                                    hover:bg-veryLightBrown hover:text-black'
+                                                                      onClick={postComment}> 
                                                                     Post Comment
                                                                       </button>
                                                                     </div>
