@@ -18,8 +18,8 @@ const Topbar = () => {
                         <a href="#" className="hidden">Read-Ups  </a>
                         <a href="/posts" className="">Write ups </a>
                         <a href="#" className="hidden">Our Authors  </a>
-                        <a href="#" className="">Contact Us  </a>
-                        <a href="#" className=""> About Us </a>
+                        <a href="#" className="">Contact </a>
+                        <a href="/" className=""> About Me </a>
                       
                         </div>
                     </div>
