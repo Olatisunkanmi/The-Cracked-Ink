@@ -5,7 +5,7 @@ import {Link } from "react-router-dom"
 
 const CardList = ({post} ) => {
   const PF =  "http://localhost:5000/images/"    
-  console.log(post);
+  // console.log(post);
   
 
   return (
