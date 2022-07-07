@@ -43,6 +43,14 @@ getData()
                             <div className="left--tp--div">
                                 <Book className='book'/> 
                                   <p className='write'> Writer Control Panel</p>
+                                  <input type="text"  
+                                    placeholder='Display Name'
+                                      className='p-3 mr-1'/>
+
+                                    <button 
+                                      className='p-2 bg-slate-600 text-white border-2 '>
+                                      Update
+                                    </button>
                                 </div>
 
                           
@@ -155,7 +163,9 @@ getData()
             <ul className="featured--post--ul">
                              {
                                                     posts.map (cur => (
-                                                      <FeaturedPosts post={cur} />
+                                                      <FeaturedPosts 
+                                                      key={cur.title}
+                                                      post={cur} />
                                                     ))
                                                   }
                               
