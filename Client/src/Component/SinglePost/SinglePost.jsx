@@ -1,4 +1,3 @@
-import './SinglePost.css';
 import { useAuth } from '../../Hooks/useAuth';
 import   {EditOutlined } from '@material-ui/icons';
 import { useLocation } from 'react-router-dom';
@@ -79,7 +78,7 @@ const SinglePost = () => {
         email: mail.value,
         comment: comment.value
         })
-        setPost(res.data)
+        // setPost(res.data)
         
       } catch (error) {
           console.log(error);
@@ -101,23 +100,22 @@ const SinglePost = () => {
     <> 
 
     <div>
-        <div className="flex flex-col justify-around m-10">
-'
-                    
+        
+        
                             <div className='text-center flex flex-col  items-center p-6 m-10'>
-                                        <img src={PF + post.photo} alt="" className='w-2/3
-                                        text-center justify-center align-center'/>
+                                        <img src={PF + post.photo} alt="" className='w-full md:w-2/3
+                                        text-center justify-center align-center object-cover'/>
                         '
                                         {updatemode 
 
                                           ? <input type='text' value={title} className='' onChange={(e) => setTitle(e.target.value)}  />
-                                          : <p className='mt-5 p-3 text-5xl font-bold text-brightRed'> {title} </p>
+                                          : <p className='mt-1 p-3 text-3xl md:text-5xl font-bold text-brightRed'> {title} </p>
 
                                         }
 
 
-                                                    <div className='mt-3 font-bold text-md'>
-                                                            <p className=''> {post.username}</p>
+                                                    <div className='mt-1 flex flex-row space-x-3 items-center font-bold text-veryLightBrown  sp'>
+                                                            <p className='capitalize text-black text-lg' > {post.username}</p>
                                                             <p className=''>
                                                             {new Date(post.createdAt).toDateString() }</p> 
                                                                 
@@ -133,19 +131,19 @@ const SinglePost = () => {
 
               <hr/>
 
-                        <div className="text-left flex flex-col items-center p-6 m-5 bg-">       
+                        <div className="text-left flex justify-center p-2 m-5">       
                                       
-                                       <div className='w-1/2 leading-9 text-2xl '>
+                                       <div className='w-full md:w-2/3 leading-9 text-1xl md:text-xl font-serif'>
                                               {updatemode
                                                 ? <textarea className='post--content' value={desc} onChange={(e) => setDesc(e.target.value)}  />
 
-                                                :<p className='post--content'>  {desc }  </p>
+                                                :<p className='first-letter:ml-6 first-letter:text-4xl leading-loose'>  {desc }  </p>
 
                                               }
 
                                               {updatemode &&
 
-                                                <button className='update--btn' onClick={handleUpdate}>
+                                                <button className='' onClick={handleUpdate}>
                                                       Update
                                                 </button>
                                                 
@@ -157,7 +155,7 @@ const SinglePost = () => {
                         </div>
 
                    <hr />   
-            </div>
+         
                                               {/**Comment section */}
 
                  <div 
