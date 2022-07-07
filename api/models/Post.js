@@ -16,6 +16,12 @@ const PostSchema = new mongoose.Schema(
       type: String,
       required: false,
     },
+    
+    creator :{
+      type: String,
+      required: false,
+
+    },
     username: {
       type: String,
       required: false,
