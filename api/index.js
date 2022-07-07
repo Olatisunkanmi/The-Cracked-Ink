@@ -6,6 +6,7 @@ const AUTHROUTE = require("./routes/auth");
 const USERLOGIN = require("./routes/users");
 const POSTCREATE = require("./routes/Posts")
 const CATCREATE = require("./routes/Categories")
+const COMCREATE = require("./routes/Comments")
 const multer = require('multer');
 const path = require('path');
 const cors = require('cors');
@@ -73,6 +74,7 @@ app.use("/api/auth", AUTHROUTE);
 app.use("/api/login", USERLOGIN); 
 app.use("/api/posts", POSTCREATE);  
 app.use("/api/category", CATCREATE); 
+app.use("/api/comment", COMCREATE); 
 
 app.listen("5000", () => {
     console.log('Node is listening on Port 5000');
