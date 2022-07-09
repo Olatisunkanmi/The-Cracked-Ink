@@ -38,7 +38,7 @@ const About = () => {
                                                     Before I tell you about myself, something occurred to me recently and I would like to tell you about it 
                                                     <br />
                                                     <br />
-                                                    It was beyond midnight, 1:30 AM to be exact.
+                                                    It was past midnight, 1:30 AM to be exact.
                                                     Sitting across from me on the glass-topped dining table was my brother-in-law.
                                                     We'd been up all night while he tested a company's security system for vulnerabilities.
                                                     I sat across from him, juggling between codes and coffee. Right there, I saw a reflection of myself !! .
