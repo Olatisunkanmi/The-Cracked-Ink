@@ -2,40 +2,49 @@ import {Link } from 'react-router-dom'
 
 const Topbar = () => {
   return (
-    
-        
-            <div className="hidden flex flex-col-reverse  md:flex md:flex-row justify-center mt-5 justify-between bg-veryLightBrown text-black">
-                    <div className=" p-6">
-                                <a 
-                                href='/'
-                                className="hidden text-xl text-black font-bold">
-                                Igbasan Olasunkanmi</a>
-                    </div>
 
-                    <div className="p-6 ">
-                        <div className="flex space-x-12 font-bold">
-                        <a href="/home" className="">Home </a>
-                        <a href="#" className="hidden">Read-Ups  </a>
-                        <a href="/posts" className="">Write ups </a>
-                        <a href="#" className="hidden">Our Authors  </a>
-                        <a href="#" className="">Contact </a>
-                        <a href="/" className=""> About Me </a>
-                      
+        <div 
+                className=''>
+                        <div 
+                                className='max-w-5xl mx-auto justify-around flex flex-row p-5 mt-7 border-4 border-y-black
+                                border-x-0'>
+                                <ul 
+                                        className='flex flex-row w-3/5 text-center justify-between '>
+                                        <li  > 
+                                                 <a href='' className='font-serif cursor-pointer text-xl
+                                                font-semibold
+                                                hover:text-veryLightBrown' > Home </a>
+                                        </li>
+
+                                        <li> 
+                                                        <a href='' className='font-serif cursor-pointer text-xl
+                                                font-semibold
+                                                hover:text-veryLightBrown' > Write ups</a>
+                                        </li>
+                                        <li> 
+                                               
+                                                        <a href='' className='font-serif cursor-pointer text-xl
+                                                font-semibold
+                                                hover:text-veryLightBrown' > Services </a>
+                                        </li>
+                                        <li> 
+                                             
+                                                        <a href=''  className='font-serif cursor-pointer text-xl
+                                                font-semibold
+                                                hover:text-veryLightBrown'> About Me </a>
+                                        </li>
+                                      
+                                       
+                                </ul>
+
+
+                                <div    >
+                                        <p> Contact ME </p>
+                                        
+                                </div>
                         </div>
-                    </div>
-
-
-
-                    <div className="p-6 space-x-5">
-                            <Link to='/admin-login'>
-                                    <a 
-                                    href="/admin-login" 
-                                    class="p-3 px-6 pt-2 text-black bg-white rounded-full baseline">
-                                    Login as Admin 
-                                    </a>
-                            </Link>
-                    </div>
-            </div>
+        </div>
+        
         
   )
 }
