@@ -12,7 +12,7 @@ const Topbar = () => {
                                 <ul 
                                         className='flex flex-row w-3/5 text-center justify-between '>
                                         <li  > 
-                                                 <a href='/' className='font-serif cursor-pointer text-xl
+                                                 <a href='/home' className='font-serif cursor-pointer text-xl
                                                 font-semibold
                                                 hover:text-veryLightBrown' > Home </a>
                                         </li>
