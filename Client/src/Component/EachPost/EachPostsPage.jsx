@@ -14,7 +14,7 @@ const Posts = () => {
       (async () => {
        const res = await axios.get("/posts " );
        setPosts(res.data);
-       console.log(res.data);
+       
       })
       
       ();
@@ -27,7 +27,13 @@ const Posts = () => {
         <Header />
         <Topbar  /> 
 
-        <AllPostsCard posts={posts} /> 
+        {
+          posts.map((cur ) => (
+            <AllPostsCard 
+            key={cur.title}
+            post={cur} />
+          ))
+        }
         <Footer /> 
     </div>
   )
