@@ -1,8 +1,8 @@
-// import './About.css';
+import '../../App.css'
 import {Link } from "react-router-dom"
 import {Header } from '../../Component/Index';
 import profileImage from '../../Assests/sk.jpg';
-import {Facebook, GitHub, Instagram, LinkedIn, Twitter } from '@material-ui/icons'
+import { GitHub, Instagram, LinkedIn, MailOutline, Twitter } from '@material-ui/icons'
 
 
 const About = () => {
@@ -70,23 +70,34 @@ const About = () => {
 
 </div>
 
-<footer>
-            <div className="">
+<footer 
+  className="bg-veryLightBrown">
+            <div className=" bg-black p-8 text-white flex flex-row items-center justify-between">
 
-                        <div className="">
-                        <button className=''>Contact Me!</button>
+                        <div className="w-1/5">
+                        <button  className='mt-10 border-4 p-3 bg-white rounded-lg font-bold text-black' >Contact Me!</button>
 
                       
                         <p>Everything Begins with an Hello !</p>
                         </div>
 
-                        <div className="">
-
+                        <div className="w-3/5 text-center space-x-10 text-3xl">
+                        <GitHub   
+                        className="icons"/>
+                        <Instagram className="icons"/>
+                      <Twitter className="icons"/>
+                      <LinkedIn className="icons"/>
+                      <MailOutline className="icons "/>
                         </div>
 
 
-                        <div>
-                              <button> 
+                        <div 
+                          className="w-1/5">
+                          <p className='text-lg font-bold'> Cracked Inc.</p>
+                          <p className='font-bold'>  
+                          <span className='text-lg'>&copy;</span>
+                          2022 | All Rights Reserved.</p>
+                              <button  className=' mt-1 border-4 p-3 bg-white rounded-lg font-bold text-black' > 
                               <Link to="/admin-login/edit">
                               Login as Admin
                               </Link>
