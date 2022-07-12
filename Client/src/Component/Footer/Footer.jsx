@@ -55,7 +55,9 @@ const Footer = () => {
                         <Phone />
                         <Mail />
                         </div>
-                        <p className='font-bold'>  2022 | All Rights Reserved.</p>
+                        <p className='font-bold'>  
+                          <span className='text-lg'>&copy;</span>
+                          2022 | All Rights Reserved.</p>
                         
                     
                     </div>
