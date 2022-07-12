@@ -2,7 +2,7 @@ import '../../App.css'
 import {Link } from "react-router-dom"
 import {Header } from '../../Component/Index';
 import profileImage from '../../Assests/sk.jpg';
-import { GitHub, Instagram, LinkedIn, MailOutline, Twitter } from '@material-ui/icons'
+import { ArrowRightAlt, GitHub, Instagram, LinkedIn, MailOutline, Twitter } from '@material-ui/icons'
 
 
 const About = () => {
@@ -72,42 +72,53 @@ const About = () => {
 
 <footer 
   className="bg-veryLightBrown">
-            <div className=" bg-black p-8 text-white flex flex-row items-center justify-between">
+            <div className=" bg-black p-8 text-white flex flex-col md:flex-row items-center justify-between">
 
-                        <div className="w-1/5">
-                        <button  className='mt-10 border-4 p-3 bg-white rounded-lg font-bold text-black' >Contact Me!</button>
-
-                      
-                        <p>Everything Begins with an Hello !</p>
+                        <div className="hidden md:block w-1/5">
+                        <button  className=' md:block mt-10 border-4 p-3 bg-white rounded-lg font-bold text-black' >Contact Me <ArrowRightAlt /> </button>
+                        <p 
+                          className='text-xl font-serif'>Everything Begins with an Hello !</p>
                         </div>
 
                         <div className="w-3/5 text-center space-x-10 text-3xl">
-                        <a href="https://github.com/Olatisunkanmi"></a>
-                        <GitHub className="icons"/>
 
-                        <a href="https://instagram.com/olatisunkanmi__?igshid=YmMyMTA2M2Y=">
-                        <Instagram className="icons"/>
-                        </a>
+                                    <a href="https://github.com/Olatisunkanmi " target='_blank'>
+                                    <GitHub className="icons"/>
+                                    </a>
+                                    
 
-                          <a href='https://twitter.com/olatisunkanmi_'> 
-                          <Twitter className="icons"/>
-                          </a>
+                                    <a href="https://instagram.com/olatisunkanmi__?igshid=YmMyMTA2M2Y=" target='_blank'>
+                                    <Instagram className="icons"/>
+                                    </a>
 
-                        <a href='https://www.linkedin.com/in/olasunkanmi-igbasan-591447223/'>
-                      <LinkedIn className="icons"/>
-                        </a>
-                      
-                      <MailOutline className="icons "/>
+                                      <a href='https://twitter.com/olatisunkanmi_ ' target='_blank'> 
+                                      <Twitter className="icons"/>
+                                      </a>
+
+                                    <a href='https://www.linkedin.com/in/olasunkanmi-igbasan-591447223/ ' target='_blank'>
+                                  <LinkedIn className="icons"/>
+                                    </a>
+                                  
+                                  <MailOutline className="icons " />
+
+
+                                  <div 
+                                  className='md:hidden my-7 '>
+                                  <p 
+                                  className='text-xl font-serif'>Everything Begins with an Hello !</p>
+                                  </div>
                         </div>
 
 
                         <div 
-                          className="w-1/5">
+                          className="flex flex-col w-1/5 md:block">
                           <p className='text-lg font-bold'> Cracked Inc.</p>
+
                           <p className='font-bold'>  
                           <span className='text-lg'>&copy;</span>
                           2022 | All Rights Reserved.</p>
-                              <button  className=' mt-1 border-4 p-3 bg-white rounded-lg font-bold text-black' > 
+                          
+                              <button  className='hidden mt-1 border-4 p-3 bg-white rounded-lg font-bold text-black' > 
                               <Link to="/admin-login/edit">
                               Login as Admin
                               </Link>
