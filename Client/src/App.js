@@ -9,6 +9,9 @@ import { useContext } from 'react'
 
 function App() {
   const {user} =  useContext(Context);
+ 
+    
+
   return (
    
     <BrowserRouter >   
