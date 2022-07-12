@@ -23,7 +23,7 @@ const Posts = () => {
     
   
   return (
-    <div>
+    <div  >
         <Header />
         <Topbar  /> 
 
