@@ -1,3 +1,4 @@
+import { LocalCafeOutlined } from '@material-ui/icons';
 import {Link } from 'react-router-dom'
 
 const Topbar = () => {
@@ -11,13 +12,13 @@ const Topbar = () => {
                                 <ul 
                                         className='flex flex-row w-3/5 text-center justify-between '>
                                         <li  > 
-                                                 <a href='' className='font-serif cursor-pointer text-xl
+                                                 <a href='/' className='font-serif cursor-pointer text-xl
                                                 font-semibold
                                                 hover:text-veryLightBrown' > Home </a>
                                         </li>
 
                                         <li> 
-                                                        <a href='' className='font-serif cursor-pointer text-xl
+                                                        <a href='/posts' className='font-serif cursor-pointer text-xl
                                                 font-semibold
                                                 hover:text-veryLightBrown' > Write ups</a>
                                         </li>
@@ -29,7 +30,7 @@ const Topbar = () => {
                                         </li>
                                         <li> 
                                              
-                                                        <a href=''  className='font-serif cursor-pointer text-xl
+                                                        <a href='/'  className='font-serif cursor-pointer text-xl
                                                 font-semibold
                                                 hover:text-veryLightBrown'> About Me </a>
                                         </li>
@@ -39,7 +40,12 @@ const Topbar = () => {
 
 
                                 <div    >
-                                        <p> Contact ME </p>
+                                      <a
+                                      href='https://www.buymeacoffee.com/olatisun'
+                                      target='_blank'
+                                        className='font-serif cursor-pointer text-xl
+                                        font-bold
+                                        text-brightRed'> Buy ME Coffee <LocalCafeOutlined /> </a>
                                         
                                 </div>
                         </div>
