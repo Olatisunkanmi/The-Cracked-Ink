@@ -15,14 +15,14 @@ const SinglePost = () => {
   const [title, setTitle ] =  useState('')
   const [desc, setDesc ] =  useState('')
   const [post, setPost ] = useState ({})
-
-
-  // console.log(cat)
+  const [comments, setComments] = useState([])
+ 
+  
 
   useEffect(() => {
       const getCats = async () => {
            const res = await axios .get(`/posts`);
-            // console.log(res.data);
+            
       }
       getCats()
   }, [])
@@ -31,25 +31,24 @@ const SinglePost = () => {
    // getting the Id of the post
 //    so all post and open on a new page in repect to their ids 
   const location = useLocation().pathname.split('/')[2]
-  // console.log(`${location} loca`);
+
 
   const lot = useLocation()
-//   console.log(lot);
-
-  
   useEffect(() => {
       const getDetails = async () => {
           const res = await axios.get(`/posts/${location}`);    
 
-          // console.log(res.data);
+          
           setPost(res.data);
           setTitle(res.data.title);
           setDesc(res.data.desc);
+        setComments(res.data.comments);
+
       };
       getDetails();  
   }, [location])
 
-  console.log(post);
+  
 
   const handleUpdate = async() => {
      try {
@@ -61,7 +60,7 @@ const SinglePost = () => {
       setUpdateMode(false)
 
      } catch (error) {
-      // console.log(error);
+     
      }
   }
 
@@ -69,34 +68,19 @@ const SinglePost = () => {
     const username =  document.querySelector('#username');
     const mail =  document.querySelector('#email');
     const comment =  document.querySelector('#comment');
-        console.log(username.value);
-      console.log(location);
-
-
+       
       try {
         const res = await axios.put(`/comment/${location}`, {
           username: username.value,
         email: mail.value,
         comment: comment.value
         })
-        // setPost(res.data)
+        setComments(res.data.comments)
         
       } catch (error) {
           console.log(error);
       }
   }
-
-  // useEffect(() => {
-  //     const UpdateComments = 
-  
-  //   return () => {
-  //     second
-  //   }
-  // }, [])
-  
-  
-
-
   return (
     <> 
 
@@ -229,8 +213,16 @@ const SinglePost = () => {
                                                   className='mt-4 overflow-y-auto space-y-3 h-4/5'>
 
                                                          <div>
-                                                         <p className='text-lg font-bold'> Username</p>
-                                                       
+                                                         <p className='text-lg font-bold'> </p>
+
+                                                         {
+                                                          comments.map(cur => (
+                                                            <p  
+                                                              className='my-5 text-lg font-mono p-2 bg-white'> {cur }</p>
+                                                          ))
+                                                         }
+                                                        
+
                                                          </div>
                                                 </div>
                                </div>
