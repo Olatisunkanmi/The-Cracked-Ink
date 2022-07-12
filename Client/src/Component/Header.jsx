@@ -4,7 +4,10 @@ import {Link } from 'react-router-dom'
 
 const Header = () => {
   return (
-    <div className="container max-w-6xl mt-2 px-5 p-3 mx-auto text-center">
+    <div >
+    
+   
+    <div className="container max-w-6xl mt-2 px-5 p-3 mx-auto text-center ">
 
       <Link to='/posts/' className='link'>
       
@@ -14,6 +17,8 @@ const Header = () => {
             ...Read, Write 
             <span className='text-veryLightBrown '> and Read a little </span>
              bit More !</p>
+    </div>
+
     </div>
   )
 }
