@@ -63,7 +63,7 @@ const About = () => {
                                   </Link>
                             
                                  </button>
-                                <p className="">Enough With the boring stuffs, I promise you are going to love it there.</p>
+                                <p className="font-mono text-xl leading-relaxed">Enough With the boring stuffs, I promise you are going to love it there.</p>
                             </div>
             </div>
 
