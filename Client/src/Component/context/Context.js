@@ -22,7 +22,7 @@ export const ContextProvider = ({ children }) => {
         // this UseEffect fn is started when there is change to our user
     useEffect(() => {
         localStorage.setItem("user",  JSON.stringify( state.user ))
-        localStorage.setItem('hi', 'hello')
+       
     })
 
         return (
