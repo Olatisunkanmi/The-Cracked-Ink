@@ -4,7 +4,7 @@ import { GitHub, Instagram, LinkedIn, Mail, Phone, Twitter } from '@material-ui/
 const Footer = () => {
   return (
     <>
-        <footer className='bg-veryLightBrown'>
+        <footer className='bg-veryDarkBlue text-white'>
 
         <div  
          className="container p-1 -space-x-10 mx-auto flex flex-col  items-center justify-around md:flex md:flex-row">
