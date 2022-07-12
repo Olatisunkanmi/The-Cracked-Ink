@@ -82,11 +82,21 @@ const About = () => {
                         </div>
 
                         <div className="w-3/5 text-center space-x-10 text-3xl">
-                        <GitHub   
-                        className="icons"/>
+                        <a href="https://github.com/Olatisunkanmi"></a>
+                        <GitHub className="icons"/>
+
+                        <a href="https://instagram.com/olatisunkanmi__?igshid=YmMyMTA2M2Y=">
                         <Instagram className="icons"/>
-                      <Twitter className="icons"/>
+                        </a>
+
+                          <a href='https://twitter.com/olatisunkanmi_'> 
+                          <Twitter className="icons"/>
+                          </a>
+
+                        <a href='https://www.linkedin.com/in/olasunkanmi-igbasan-591447223/'>
                       <LinkedIn className="icons"/>
+                        </a>
+                      
                       <MailOutline className="icons "/>
                         </div>
 
