@@ -66,20 +66,27 @@ const SinglePost = () => {
 
   const postComment = async () => {
     const username =  document.querySelector('#username');
-    const mail =  document.querySelector('#email');
     const comment =  document.querySelector('#comment');
        
       try {
         const res = await axios.put(`/comment/${location}`, {
           username: username.value,
-        email: mail.value,
         comment: comment.value
         })
         setComments(res.data.comments)
+
+          try {
+           username.value = " "
+            comment.value = '';
+          } catch (error) {
+            
+          }
         
       } catch (error) {
           console.log(error);
       }
+
+      
   }
   return (
     <> 
@@ -150,32 +157,21 @@ const SinglePost = () => {
                                               {/**Comment section */}
 
                  <div 
-                   className='flex flex-col md:flex-row text-left w-3/5 m-auto mb-5' >
+                   className='flex flex-col md:flex-row text-left w-3/5 m-auto mb-5 max-h-96' >
                                               
               
 
                                     <div 
                                       className='bg-stone-500 p-5 flex-wrap w-full md:w-2/6 space-y-2'>
-                                              <h3 className='post--comment--header text-brightRed font-bold'>Leave a Reply</h3>
-                                                <p
-                                                  className='text-sm text-white text-thin '>Your Email will not be published. Required Fields are marked <span> * </span></p>
+                                              <h3 className='post--comment--header text-white font-bold'>Leave a Reply</h3>
+                                              
 
-
-                                                <div className='flex flex-col space-y-5 '>
+                                                <div className='flex flex-col space-y-10 '>
                                                                     <input type="text" id="username" placeholder='Your Name' className='
                                                                    bg-black
                                                                    p-3
                                                                    text-white
                                                                    placeholder:text-brightRed'/>
-
-
-                                                                    <input type="text" id="email" placeholder='Your Email Address'   
-                                                                    className='
-                                                                   bg-black
-                                                                   p-3
-                                                                   text-white
-                                                                   placeholder:text-brightRed
-                                                                    '/>
 
                                                                     <textarea 
                                                                     id="comment"
@@ -188,10 +184,7 @@ const SinglePost = () => {
                                                                   
                                                                     </textarea>
 
-                                                                      
-
-                                                                  
-
+                                                  
                                                                     <div>
                                                                       
                                                                     <button className='p-3 font-bold  bg-black text-brightRed  
@@ -218,7 +211,9 @@ const SinglePost = () => {
                                                          {
                                                           comments.map(cur => (
                                                             <p  
-                                                              className='my-5 text-lg font-mono p-2 bg-white'> {cur }</p>
+                                                              className='my-5 text-lg font-mono p-2 bg-white'>
+                                                         
+                                                              {cur }</p>
                                                           ))
                                                          }
                                                         
