@@ -1,10 +1,23 @@
 import React from 'react'
 import {Link } from "react-router-dom"
+import {  useState } from "react";
 import { ArrowRightAlt, CommentOutlined, FavoriteBorderOutlined, Share } from "@material-ui/icons";
 
 const AllPostsCard = ({post}) => {
 
-  console.log(post.comments.length);
+ const  PostLikes = post.likes.length 
+ console.log(PostLikes);
+  const [likes, setLikes] = useState(0);
+  const [isClicked, setIsClicked] = useState(false);
+
+  const handleClick = () => {
+    if (isClicked) {
+      setLikes(likes - 1);
+    } else {
+      setLikes(likes + 1);
+    }
+    setIsClicked(!isClicked);
+  };
 
 
 
@@ -44,7 +57,12 @@ const AllPostsCard = ({post}) => {
                                                           <div  
                                                             className="space-x-5 mt-5"> 
                                                           <Share />
-                                                          <FavoriteBorderOutlined />
+
+                                                          <button className={ `like-button ${isClicked && 'liked'}` } onClick={ handleClick }>
+                                                          <span className="likes-counter">{ `Like | ${likes}` }</span>
+                                                        </button>
+
+                                                          <FavoriteBorderOutlined  className='cursor-pointer' />
                                                             <span> 
                                                             {
                                                               post.comments.length
