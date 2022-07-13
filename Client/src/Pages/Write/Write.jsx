@@ -19,12 +19,9 @@ const HandleSubmit = async (e) => {
     username: user.username,
     title: title,
     desc: desc,
-   
   };
 
-  
-  console.log(title);
-  console.log(desc);
+
 
   if(file){
     const data = new FormData();
