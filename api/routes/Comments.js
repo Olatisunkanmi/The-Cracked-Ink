@@ -33,19 +33,5 @@ router.put('/:id',  async (req, res)   => {
   
 } )
 
-// get all comments 
-// router.get('/get', async (req, res)  => {
-
-//         try {
-//                 const comment = await CommentDB.find();
-//                 res.status(200).json(cat);
-
-//         } catch (error) {
-//             res.status(500).json (error)
-//         }
-// })
-
-// delete comment
-
 
 module.exports = router;
