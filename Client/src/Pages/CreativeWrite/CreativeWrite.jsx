@@ -40,7 +40,7 @@ const [newPost, setNewPosts ] =  useState([])
                                     
                                       setPosts(chooseRandom(newArr, 3));
                                       } catch (error) {
-                                              console.log(error);
+                                             
                                       }
                           try {
                                 // getting the last post to send to <FirstCard />
