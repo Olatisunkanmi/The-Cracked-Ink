@@ -16,7 +16,7 @@ const SinglePost = () => {
   const [desc, setDesc ] =  useState('')
   const [post, setPost ] = useState ({})
   const [comments, setComments] = useState([])
- 
+ let COMMENTERROR = false
   
 
   useEffect(() => {
@@ -67,6 +67,9 @@ const SinglePost = () => {
   const postComment = async () => {
     const username =  document.querySelector('#username');
     const comment =  document.querySelector('#comment');
+
+    if(username.value === "" || comment.value === "")
+    COMMENTERROR = true;
        
       try {
         const res = await axios.put(`/comment/${location}`, {
@@ -95,7 +98,7 @@ const SinglePost = () => {
         
         
                             <div className='text-center flex flex-col  items-center p-6 m-10'>
-                                        <img src={PF + post.photo} alt="" className='w-full md:w-2/3
+                                        <img src={PF + post.photo} alt="" className='w-full md:w-2/4 
                                         text-center justify-center align-center object-cover'/>
                         '
                                         {updatemode 
@@ -166,8 +169,8 @@ const SinglePost = () => {
                                               <h3 className='post--comment--header text-white font-bold'>Leave a Reply</h3>
                                               
 
-                                                <div className='flex flex-col space-y-10 '>
-                                                                    <input type="text" id="username" placeholder='Your Name' className='
+                                                <form className='flex flex-col space-y-10 '>
+                                                                    <input type="text" id="username" required placeholder='Your Name' className='
                                                                    bg-black
                                                                    p-3
                                                                    text-white
@@ -178,7 +181,7 @@ const SinglePost = () => {
                                                                     className='bg-black p-2 
                                                                     text-white
                                                                     placeholder:text-brightRed' 
-
+                                                                    required
                                                                     name=""
                                                                       placeholder='Write A comment'>
                                                                   
@@ -193,7 +196,7 @@ const SinglePost = () => {
                                                                     Post Comment
                                                                       </button>
                                                                     </div>
-                                                        </div>
+                                                        </form>
                                </div>
 
 
