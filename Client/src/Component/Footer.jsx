@@ -1,7 +1,31 @@
+import axios from 'axios';
 import React from 'react';
-import { GitHub, Instagram, LinkedIn, Mail, Phone, Twitter } from '@material-ui/icons';
+
+      
 
 const Footer = () => {
+
+//   const handleSubcribe = async () => {
+// const email = document.querySelector('#email');
+
+//     console.log(email.value);
+    
+//       try {
+//         const res = await axios.post('/subscribe', {
+//           email: email.value,
+//         }) 
+        
+//           }catch (error) {
+//             console.log(error);
+//       }
+
+//     }
+
+const handleSubcribe = () => {
+  const email = document.querySelector('#email');
+  console.log(email.value );
+}
+
   return (
     <>
         <footer className='bg-veryDarkBlue text-white'>
@@ -14,52 +38,37 @@ const Footer = () => {
 
                                     <p className=''>Receive notifications of new posts.</p>
 
-                                    <div className='flex flex-col font-left mt-2'>
+                                    <form className='flex flex-col font-left mt-2'>
                                                 <input 
                                                 type="text" 
-                                                class="flex-1 px-5 rounded-full focus:outline-none" 
-                                                placeholder="Enter Your mail"/>
+                                                id="email"
+                                                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                                                class="text-black p-3 flex-1 px-5 rounded-full focus:outline-none 
+                                                  placeholder:text-black" 
+                                                placeholder="Enter Your mail"
+                                                  required/>
 
                                                 <div class="flex mt-3 justify-center md:justify-start"> 
-                                                <a 
+                                                <button
                                                 href="#" 
-                                                class="p-3 px-6 pt-2 text-black bg-white rounded-full baseline">
+                                                className="p-3 px-6 pt-2 text-black bg-white rounded-full baseline
+                                                  hover:bg-brightRed hover:text-white" 
+                                                    onClick={handleSubcribe}>
                                                     Subscribe 
-                                                </a>
+                                                </button>
                                             </div>
-                                    </div>
+                                    </form>
 
 
                                 </div>
 
 
-                                <div className="hidden md:block m-5 font-bold text-l space-y-3">
-                                    <h4 className=''>Categories</h4>
-                                        <div className='space-y-1 flex flex-col'>
-                                                <a href=""> Lifestyle </a>
-                                                <a href=""> Travel </a>
-                                                <a href=""> Travel </a>
-                                                <a href=""> Travel </a>
-                                        </div>
-                                </div>
-                
-            
 
                     <div className='space-y-0.5'>
                             <p className='text-lg font-bold'> Cracked Inc.</p>
-                        <div className='space-x-2'>
-                        <Instagram />
-                        <Twitter />
-                        <GitHub />
-                        <LinkedIn />
-                        <Phone />
-                        <Mail />
-                        </div>
                         <p className='font-bold'>  
                           <span className='text-lg'>&copy;</span>
                           2022 | All Rights Reserved.</p>
-                        
-                    
                     </div>
                         
         </div>
