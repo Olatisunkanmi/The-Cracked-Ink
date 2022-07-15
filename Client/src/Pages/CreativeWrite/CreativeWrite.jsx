@@ -19,7 +19,7 @@ const [newPost, setNewPosts ] =  useState([])
               const res = await axios.get("/posts " );
 
            
-                        console.log(res.data);
+                     
                                       try {
  
                                         let   newArr =  res.data;
