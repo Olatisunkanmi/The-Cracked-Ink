@@ -28,6 +28,7 @@ const Posts = () => {
         {
           posts.map((cur ) => (
             <AllPostsCard 
+            
             key={cur.title}
             post={cur} />
           ))
