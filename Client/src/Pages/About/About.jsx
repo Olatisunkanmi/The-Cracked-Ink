@@ -14,18 +14,13 @@ const About = () => {
 
       <div>
         <div 
-          className='text-center'>
+          className='text-center mt-5'>
               <h3 
-              className=''> About ME !</h3>
+              className='about'> About Me .</h3>
         </div>
 
 
-
-
-
-
-
-                    <div className="flex flex-col w-full md:flex-row m-auto items-center justify-around ">
+                    <div className="flex flex-col -mt-5 w-full md:flex-row m-auto items-center justify-around ">
     
            
                                                 <div className="md:w-2/5 m-auto justify-end flex">
