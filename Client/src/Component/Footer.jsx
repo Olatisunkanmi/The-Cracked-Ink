@@ -33,7 +33,7 @@ const handleSubcribe = () => {
         <div  
          className="container p-1 -space-x-10 mx-auto flex flex-col  items-center justify-around md:flex md:flex-row">
             
-                                <div className="m-5 font-bold text-l">
+                                <div className="m-5  text-l">
                                     <h4 className=''>Subscribe Via Email.</h4>
 
                                     <p className=''>Receive notifications of new posts.</p>
@@ -44,15 +44,15 @@ const handleSubcribe = () => {
                                                 id="email"
                                                 pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
                                                 class="text-black p-3 flex-1 px-5 rounded-full focus:outline-none 
-                                                  placeholder:text-black" 
+                                                  placeholder:text-black placeholder:italic" 
                                                 placeholder="Enter Your mail"
                                                   required/>
 
-                                                <div class="flex mt-3 justify-center md:justify-start"> 
+                                                <div class="flex mt-3 justify-center md:justify-start font-bold"> 
                                                 <button
                                                 href="#" 
-                                                className="p-3 px-6 pt-2 text-black bg-white rounded-full baseline
-                                                  hover:bg-brightRed hover:text-white" 
+                                                className="p-3 px-6 pt-2 text-black bg-brightRed rounded-full baseline
+                                                  hover:bg-white hover:text-black" 
                                                     onClick={handleSubcribe}>
                                                     Subscribe 
                                                 </button>
