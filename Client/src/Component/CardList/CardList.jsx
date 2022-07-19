@@ -19,7 +19,7 @@ const CardList = ({post} ) => {
                 
               />
 
-                    <div className="mt-5">
+                    <div className="mt-5 flex-col flex">
                                 <div className='text-center'>
                                       <span 
                                       className="items-center font-bold text-xl p-3">
@@ -47,12 +47,13 @@ const CardList = ({post} ) => {
                   
 
                                   <span 
-                                        className="CardDesc font-bold">
+                                        className="CardDesc font-bold px-5">
                                       {post.desc}
                                   </span>
 
                                 <button 
-                                      className='mt-5 p-2 text-black bg-veryLightBrown'> 
+                                      className='mt-5 p-2 text-black bg-veryLightBrown font-bold  
+                                        hover:text-white' > 
                                             <Link 
                                                   to={`/posts/${post._id}`}>
                                                   Read More 
