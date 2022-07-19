@@ -15,7 +15,8 @@ const About = () => {
       <div>
         <div 
           className='text-center'>
-              <h3> About ME !</h3>
+              <h3 
+              className=''> About ME !</h3>
         </div>
 
 
