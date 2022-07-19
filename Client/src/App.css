@@ -3,3 +3,8 @@
   cursor: pointer;
 }
 
+.about{
+  font-family: 'Berkshire Swash', cursive;
+  font-size: 52px;
+  font-weight: bolder;
+}
