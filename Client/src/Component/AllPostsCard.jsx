@@ -3,7 +3,7 @@ import {Link, useLocation } from "react-router-dom"
 import {  useState } from "react";
 import { ArrowRightAlt, CommentOutlined, FavoriteBorderOutlined, Share } from "@material-ui/icons";
 
-const AllPostsCard = ({post}) => {
+const AllPostsCard = ({ post }) => {
   const Path = useLocation()
 
  const  PostLikes = post.likes.length 
@@ -22,62 +22,47 @@ const AllPostsCard = ({post}) => {
 
   return (
     <div>
-              <div className="flex flex-col md:flex-row justify-around text-center p-4" >
 
-                        <div 
-                          className="m-5 mb-2 md:w-1/2 ">
-                                    <div 
-                                      className="bg-white p-5 lg:px-40 relative text-left">
-                                                        <h3
-                                                        className="font-serif text-left capitalize text-2xl tracking-wider font-semibold"> 
-                                                        <Link to={`/posts/${post._id}`}>
-                                                        {post.title} 
-                                                        </Link> 
-                                                        </h3>
+    <div
+        className='flex flex-row flex-wrap px-10'>
 
-                                                        <div className="mb-7 h-1 bg-zinc-700 border-none w-8"></div>
-                                                      <p
-                                                        className="para">
-                                                        {post.desc}
-                                                      </p>
-
-                                                      <div  
-                                                      className="mt-5">
-                                                              <a href="" className="">
-                                                              <Link to={`/posts/${post._id}`}>
-                                                              READ MORE
-                                                              </Link>
-                                                            <ArrowRightAlt 
-                                                              className=""/>
-                                                            </a>
-
-                                                            <div className=" h-1 bg-zinc-700 border-none w-8"></div>
-
-                                                          <div  
-                                                            className="space-x-5 mt-5"> 
-                                                          <Share />
-
-                                                          <button className={ `like-button ${isClicked && 'liked'}` } onClick={ handleClick }>
-                                                          <span className="likes-counter">{ `Like | ${likes}` }</span>
-                                                        </button>
-
-                                                          <FavoriteBorderOutlined  className='cursor-pointer' />
-                                                            <span> 
-                                                            {
-                                                              post.comments.length
-                                                            }
-                                                            
-                                                            <CommentOutlined />  </span>
-                                                          </div>
-
-                                                      </div>
-                                    </div>
-                        </div>
+            <div
+              className='w-1/2 px-20 font-bold'>
+                <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
+                molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
+                numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium
+                optio, eaque rerum! Provident similique accusantium nemo autem. Veritatis
+                obcaecati tenetur iure eius earum ut molestias architecto voluptate aliquam
+                nihil, eveniet aliquid culpa officia aut! Impedit sit sunt quaerat, odit,
+                tenetur error, harum nesciunt ipsum debitis quas aliquid. Reprehenderit,
+                quia. Quo neque error repudiandae fuga? Ipsa laudantium molestias eos 
+                sapiente officiis modi at sunt excepturi expedita sint? Sed quibusdam
+                recusandae alias error harum maxime adipisci amet laborum. 
+                </p>
+            </div>
 
 
-                    
+            <div
+              className='w-1/2'>
+                <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
+                molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
+                numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium
+                optio, eaque rerum! Provident similique accusantium nemo autem. Veritatis
+                obcaecati tenetur iure eius earum ut molestias architecto voluptate aliquam
+                nihil, eveniet aliquid culpa officia aut! Impedit sit sunt quaerat, odit,
+                tenetur error, harum nesciunt ipsum debitis quas aliquid. Reprehenderit,
+                quia. Quo neque error repudiandae fuga? Ipsa laudantium molestias eos 
+                sapiente officiis modi at sunt excepturi expedita sint? Sed quibusdam
+                recusandae alias error harum maxime adipisci amet laborum. 
+                </p>
+            </div>
 
-              </div>
+
+
+        </div>
+
     </div>
   )
 }
