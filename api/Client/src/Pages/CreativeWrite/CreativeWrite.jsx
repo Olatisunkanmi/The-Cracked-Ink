@@ -1,5 +1,5 @@
 import { Topbar, FeaturedCard, Header, Footer, FirstCard } from "../../Component/Index"
-import axios from "axios"
+import {AxiosInstance} from "../../config"
 import { useEffect } from "react"
 import { useState } from "react"
 
@@ -16,7 +16,7 @@ const [newPost, setNewPosts ] =  useState([])
       const fetchPosts =  async () => {
               
                 try {
-              const res = await axios.get("/posts " );
+              const res = await AxiosInstance.get("/posts " );
 
            
                      

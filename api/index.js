@@ -76,6 +76,12 @@ app.use("/api/posts", POSTCREATE);
 app.use("/api/category", CATCREATE); 
 app.use("/api/comment", COMCREATE); 
 
-app.listen("5000", () => {
+app.use(express.static(path.join(__dirname, "/Client/build")));
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '/<Client>/build', 'index.html'));
+})
+
+app.listen(process.env.PORT || 5000, () => {
     console.log('Node is listening on Port 5000');
 })

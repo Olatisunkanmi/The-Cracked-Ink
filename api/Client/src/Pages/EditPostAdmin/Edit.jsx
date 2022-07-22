@@ -5,7 +5,7 @@ import image from '../../Assests/write.svg';
 import {useAuth} from '../../Hooks/useAuth';
 import {Link, useLocation} from 'react-router-dom';
 import {  ChromeReaderMode, Delete, EditOutlined,Add, Book, ExitToApp, GolfCourse, NotificationImportantOutlined, Settings } from '@material-ui/icons';
-import axios from 'axios';
+import {AxiosInstance} from 'axios';
 import { useState } from 'react';
 import { useEffect } from 'react';
 
@@ -22,7 +22,7 @@ const Edit = () => {
     useEffect( () => {
         const getData  = async () => {
            try {
-          const  res = await axios.get('/posts')
+          const  res = await AxiosInstance.get('/posts')
          setPosts(res.data)
            } catch (error) {
                     console.log(error);

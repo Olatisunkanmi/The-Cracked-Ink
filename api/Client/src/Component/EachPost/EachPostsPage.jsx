@@ -1,5 +1,5 @@
 import { Topbar, Header, Footer,  AllPostsCard} from "../Index";
-import axios from "axios"
+import {AxiosInstance} from "axios"
 import { useEffect , useState } from "react";
 
 
@@ -10,7 +10,7 @@ const Posts = () => {
 
     
       (async () => {
-       const res = await axios.get("/posts " );
+       const res = await AxiosInstance.get("/posts " );
        setPosts(res.data);
        
       })
