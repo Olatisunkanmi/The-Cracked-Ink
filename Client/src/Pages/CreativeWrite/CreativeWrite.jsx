@@ -16,10 +16,8 @@ const [newPost, setNewPosts ] =  useState([])
       const fetchPosts =  async () => {
               
                 try {
-              const res = await axios.get("/posts " );
-
-           
-                     
+              const res = await axios.get("/posts" );
+                  console.log(res);
                                       try {
  
                                         let   newArr =  res.data;
