@@ -128,7 +128,7 @@ const About = () => {
                           <span className='text-lg'>&copy;</span>
                           2022 | All Rights Reserved.</p>
                           
-                              <button  className='hidden mt-1 border-4 p-3 bg-white rounded-lg font-bold text-black' > 
+                              <button  className='mt-1 border-4 p-3 bg-white rounded-lg font-bold text-black' > 
                               <Link to="/admin-login/edit">
                               Login as Admin
                               </Link>
