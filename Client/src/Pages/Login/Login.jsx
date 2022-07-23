@@ -1,6 +1,7 @@
 import './Login.css'
 import { useRef, useContext } from 'react';
 import { Context } from '../../Component/context/Context';
+import axios from "axios";
 import { useAuth }  from '../../Hooks/useAuth';
 import {  Routes, Route, Link, useNavigate, useLocation, Outlet, Navigate, } from "react-router-dom";
 
@@ -27,7 +28,7 @@ const Login = () => {
               try {      
                 // To auth user if !user 
                 // send a login error 
-                  const res = await AxiosInstance.post('/auth/login',  {
+                  const res = await axios.post('/auth/login',  {
                    username : userRef.current.value,
                    password : passwordRef.current.value,
                  }) 
