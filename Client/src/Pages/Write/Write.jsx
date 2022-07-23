@@ -2,7 +2,7 @@ import { useLocation , useNavigate } from "react-router-dom";
 import upload  from '../../Assests/upload.svg'
 import "./Write.css";
 import { useAuth } from "../../Hooks/useAuth";
-import axios from "axios";
+import {AxiosInstance} from "axios";
 import { useState } from "react";
 
 export default function Write( ) {
@@ -34,14 +34,14 @@ const HandleSubmit = async (e) => {
 
         try {
               // upload Image
-              await axios.post("/upload", data)
+              await AxiosInstance.post("/upload", data)
               
         } catch (error) {
               console.log(error);
         }
   }
         try {
-          const res = await axios.post("/posts", newPost)
+          const res = await AxiosInstance.post("/posts", newPost)
           console.log(res);
             navigate(`/posts/${res.data._id}`)
         } catch (error) {
@@ -54,7 +54,7 @@ const HandleSubmit = async (e) => {
 
     //  const [newContent, SetNewContent] = useState(`${content}`)
    const PublishPost =   () => {
-        // const res =  await axios.post(`/posts/`)
+        // const res =  await AxiosInstance.post(`/posts/`)
 
         console.log('object');
    }

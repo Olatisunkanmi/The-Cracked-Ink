@@ -1,6 +1,6 @@
 import { Topbar, FeaturedCard, Header, Footer, FirstCard } from "../../Component/Index"
-import axios from "axios"
 import { useEffect } from "react"
+import axios from "axios";
 import { useState } from "react"
 
 
