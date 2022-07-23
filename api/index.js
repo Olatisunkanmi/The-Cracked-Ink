@@ -78,4 +78,4 @@ app.use("/api/comment", COMCREATE);
 
 app.listen("5000", () => {
     console.log('Node is listening on Port 5000');
-}
+})
