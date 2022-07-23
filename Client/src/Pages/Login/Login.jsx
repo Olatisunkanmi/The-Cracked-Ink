@@ -3,7 +3,6 @@ import { useRef, useContext } from 'react';
 import { Context } from '../../Component/context/Context';
 import axios from "axios";
 import { useAuth }  from '../../Hooks/useAuth';
-import axios from 'axios'
 import {  Routes, Route, Link, useNavigate, useLocation, Outlet, Navigate, } from "react-router-dom";
 
 
