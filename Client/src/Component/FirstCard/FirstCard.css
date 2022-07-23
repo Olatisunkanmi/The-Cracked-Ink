@@ -1,0 +1,31 @@
+.FirstCard--cat{
+    cursor: pointer;
+}
+
+.FirstCard--title{
+
+    font-size: 35px;
+    font-family: 'Lora', serif;
+    font-weight: bolder;
+    color: rgb(221, 134, 19);
+    margin: 10px;
+    cursor: pointer;
+}
+
+.FirstCard--desc{
+    /* max-width: 800px;
+    margin: 0 auto; */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    font-size: 18px;
+    font-family: 'Explora', cursive;
+
+
+}
+
+.FirstCard--btn{
+    cursor: pointer;
+}
