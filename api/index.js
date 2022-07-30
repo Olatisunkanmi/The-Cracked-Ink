@@ -39,7 +39,7 @@ app.use("/api/users", userRoute);
 app.use("/api/posts", postRoute);
 app.use("/api/categories", categoryRoute);
 
-const port = process.env.port || 5000;
+const port = process.env.port || 3500;
 
 app.listen(port, () => {
     console.log(`Node is listening on Port ${port}`);
