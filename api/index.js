@@ -3,9 +3,9 @@ const app = express();
 const dotenv = require("dotenv");
 const mongoose = require("mongoose");
 const authRoute = require("./routes/auth");
-const userRoute = require("./routes/users");
-const postRoute = require("./routes/posts");
-const categoryRoute = require("./routes/categories");
+const userRoute = require("./routes/Users");
+const postRoute = require("./routes/Posts");
+const categoryRoute = require("./routes/Categories");
 const multer = require("multer");
 const path = require("path");
 
@@ -39,7 +39,7 @@ app.use("/api/users", userRoute);
 app.use("/api/posts", postRoute);
 app.use("/api/categories", categoryRoute);
 
-const port = (process.env.port || 3500);
+const port = (process.env.PORT || 3500);
 
 app.listen(port, () => {
     console.log(`Node is listening on Port ${port}`);
