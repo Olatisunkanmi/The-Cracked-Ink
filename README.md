@@ -1,4 +1,5 @@
 # Personal Blog Website
- 
- 
- https://cracked-ink-cv.herokuapp.com/api/posts
+https://cracked-ink.vercel.app/
+
+
+
