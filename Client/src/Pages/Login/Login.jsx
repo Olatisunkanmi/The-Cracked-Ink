@@ -28,7 +28,7 @@ const Login = () => {
               try {      
                 // To auth user if !user 
                 // send a login error 
-                  const res = await axios.post('/auth/login',  {
+                  const res = await axios.get('/auth/login',  {
                    username : userRef.current.value,
                    password : passwordRef.current.value,
                  }) 
@@ -46,7 +46,6 @@ const Login = () => {
     }
   
     console.log(user)
-    console.log('log');
   return (
     
     
