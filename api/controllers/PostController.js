@@ -2,6 +2,14 @@ const router = require('express').Router();
 const User = require('../models/User');
 const Post = require('../models/Post');
 
+// Sort by cat
+exports.junkPosts = async (req, res, next) => {
+	// set cat we want to fetch
+	req.query.categories = 'junk';
+	req.query.sort = 'createdAt';
+	next();
+};
+
 // !CREATE POST
 exports.createPost = async (req, res) => {
 	const newPost = new Post(req.body);
@@ -22,10 +30,25 @@ exports.createPost = async (req, res) => {
 	}
 };
 
-//  ! get a post
+//  ! get aALL post
 exports.getAllPosts = async (req, res) => {
 	try {
-		let Posts = await Post.find();
+		let queryObj = { ...req.query };
+		console.log(queryObj);
+
+		// ? In cases where there are multiple queries.
+		// let queryStr = JSON.stringify(queryObj);
+		// queryStr = JSON.parse(queryStr);
+
+		let query = await Post.find(queryObj);
+
+		// Sort other
+		if (req.query.sort) {
+			// query = query.sort()
+		}
+
+		let Posts = await query;
+
 		res.status(200).json({
 			status: 'sucess',
 			result: Posts.length,
@@ -36,7 +59,7 @@ exports.getAllPosts = async (req, res) => {
 	} catch (error) {
 		res.status(400).json({
 			status: 'Fail',
-			message: error,
+			message: error.message,
 		});
 	}
 };
@@ -95,10 +118,51 @@ exports.updatePost = async (req, res) => {
 				Posts: updatedPost,
 			},
 		});
-	} catch (err) {
+	} catch (error) {
 		res.status(500).json({
 			status: 'Fail',
-			message: err,
+			message: error.message,
+		});
+	}
+};
+
+exports.Archives = async (req, res) => {
+	try {
+		const month = req.params.id * 1;
+		console.log(typeof month);
+
+		const Time = await Post.aggregate([
+			{
+				$sort: { date: -1, item: 1 },
+			},
+
+			// group by month and freq of tours !
+			{
+				$group: {
+					_id: {
+						day: { $dayOfYear: '$createdAt' },
+						year: { $year: '$date' },
+					},
+					Posts: {
+						$push: {
+							title: '$title',
+							desc: '$desc',
+						},
+					},
+				},
+			},
+		]);
+		res.status(200).json({
+			status: 'success',
+			result: Time.length,
+			data: {
+				Dates: Time,
+			},
+		});
+	} catch (error) {
+		res.status(404).json({
+			status: 'Fail',
+			message: error.message,
 		});
 	}
 };
