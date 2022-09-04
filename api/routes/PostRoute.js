@@ -7,6 +7,14 @@ router
 	.post(postController.createPost);
 
 router
+	.route('/junk-posts')
+	.get(postController.junkPosts, postController.getAllPosts);
+
+router
+	.route('/archives')
+	.get(postController.Archives, postController.getAllPosts);
+
+router
 	.route('/:id')
 	.get(postController.getPost)
 	.delete(postController.deletePost)
