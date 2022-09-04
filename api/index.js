@@ -4,7 +4,7 @@ const morgan = require('morgan');
 const authRoute = require('./routes/auth');
 const userRoute = require('./routes/Users');
 const POSTROUTE = require('./routes/PostRoute');
-const categoryRoute = require('./routes/Categories');
+const categoryRoute = require('./routes/CategoryRoute');
 const multer = require('multer');
 const path = require('path');
 
