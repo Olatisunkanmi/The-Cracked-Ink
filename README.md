@@ -8,7 +8,7 @@ MongoDB (database )
 
 Speacial Features.
 An Admin Page where I can perform all CRUD Operations.
-( A restricted rotues that requires an Admin authentication )
+( A restricted rotues that requires an Admin authentication)
 
 
 
