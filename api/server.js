@@ -2,7 +2,7 @@ const app = require('./index');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 var cors = require('cors');
-app.use(cors());
+app.use(cors('*'));
 
 dotenv.config();
 
