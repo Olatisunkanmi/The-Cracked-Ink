@@ -3,14 +3,18 @@ const User = require('../models/User');
 const Post = require('../models/Post');
 
 // Sort by cat
-exports.junkPosts = async (req, res, next) => {
-	// set cat we want to fetch
-	req.query.categories = 'junk';
-	req.query.sort = 'createdAt';
+exports.Poems = async (req, res, next) => {
+	req.query.categories = 'Poems';
+	// req.query.sort = 'Poems';
+	next();
+};
+exports.Main = async (req, res, next) => {
+	req.query.categories = 'main';
+	// req.query.sort = 'Poems';
 	next();
 };
 
-// !CREATE POST
+// !CREATE POSTrs
 exports.createPost = async (req, res) => {
 	const newPost = new Post(req.body);
 	try {
@@ -39,12 +43,10 @@ exports.getAllPosts = async (req, res) => {
 		// ? In cases where there are multiple queries.
 		// let queryStr = JSON.stringify(queryObj);
 		// queryStr = JSON.parse(queryStr);
-
-		let query = await Post.find(queryObj);
-
+		query = await Post.find(queryObj);
 		// Sort other
 		if (req.query.sort) {
-			// query = query.sort()
+			query = query.sort();
 		}
 
 		let Posts = await query;
@@ -126,38 +128,42 @@ exports.updatePost = async (req, res) => {
 	}
 };
 
+// ! ARchives
 exports.Archives = async (req, res) => {
 	try {
-		const month = req.params.id * 1;
-		console.log(typeof month);
-
-		const Time = await Post.aggregate([
-			{
-				$sort: { date: -1, item: 1 },
-			},
-
+		// let posts = req.posts
+		let posts = await Post.aggregate([
 			// group by month and freq of tours !
+			{
+				$match: { categories: 'junk' },
+			},
 			{
 				$group: {
 					_id: {
 						day: { $dayOfYear: '$createdAt' },
-						year: { $year: '$date' },
+						year: { $year: '$createdAt' },
 					},
 					Posts: {
 						$push: {
 							title: '$title',
 							desc: '$desc',
+							_id: '$_id',
+							username: '$username',
+							comments: '$comments',
+							createdAt: '$createdAt',
+							photo: '$photo',
+							categories: '$categories',
 						},
 					},
 				},
 			},
+
+			{ $sort: { _id: 1 } },
 		]);
 		res.status(200).json({
 			status: 'success',
-			result: Time.length,
-			data: {
-				Dates: Time,
-			},
+			result: posts.length,
+			data: posts,
 		});
 	} catch (error) {
 		res.status(404).json({
