@@ -54,9 +54,7 @@ exports.getAllPosts = async (req, res) => {
 		res.status(200).json({
 			status: 'sucess',
 			result: Posts.length,
-			data: {
-				Posts: Posts,
-			},
+			data: Posts,
 		});
 	} catch (error) {
 		res.status(400).json({
@@ -139,10 +137,11 @@ exports.Archives = async (req, res) => {
 			},
 			{
 				$group: {
-					_id: {
-						day: { $dayOfYear: '$createdAt' },
-						year: { $year: '$createdAt' },
-					},
+					_id: { $year: '$createdAt' },
+					// _id: {
+					// 	day: { $dayOfYear: '$createdAt' },
+					// 	year: { $year: '$createdAt' },
+					// },
 					Posts: {
 						$push: {
 							title: '$title',
