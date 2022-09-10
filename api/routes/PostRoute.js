@@ -7,12 +7,14 @@ router
 	.post(postController.createPost);
 
 router
-	.route('/junk-posts')
-	.get(postController.junkPosts, postController.getAllPosts);
+	.route('/main')
+	.get(postController.Main, postController.getAllPosts);
 
 router
-	.route('/archives')
-	.get(postController.Archives, postController.getAllPosts);
+	.route('/poems')
+	.get(postController.Poems, postController.getAllPosts);
+
+router.route('/junk').get(postController.Archives);
 
 router
 	.route('/:id')
