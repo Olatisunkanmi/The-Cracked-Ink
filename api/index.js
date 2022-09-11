@@ -7,6 +7,8 @@ const POSTROUTE = require('./routes/PostRoute');
 const categoryRoute = require('./routes/CategoryRoute');
 const multer = require('multer');
 const path = require('path');
+const cors = require('cors');
+app.use(cors('*'));
 
 app.use(express.json());
 app.use(morgan('common'));
