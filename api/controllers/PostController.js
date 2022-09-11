@@ -135,28 +135,18 @@ exports.Archives = async (req, res) => {
 			{
 				$match: { categories: 'junk' },
 			},
+
 			{
 				$group: {
-					_id: { $year: '$createdAt' },
-					// _id: {
-					// 	day: { $dayOfYear: '$createdAt' },
-					// 	year: { $year: '$createdAt' },
-					// },
-					Posts: {
-						$push: {
-							title: '$title',
-							desc: '$desc',
-							_id: '$_id',
-							username: '$username',
-							comments: '$comments',
-							createdAt: '$createdAt',
-							photo: '$photo',
-							categories: '$categories',
-						},
-					},
+					_id: { $dayOfYear: '$createdAt' },
+					type: 'title',
 				},
+				// {
+				// 	$group: {
+				// 		_id: { $dayOfYear: '$createdAt' },
+				// 	},
+				// },
 			},
-
 			{ $sort: { _id: 1 } },
 		]);
 		res.status(200).json({
