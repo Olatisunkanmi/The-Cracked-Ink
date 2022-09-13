@@ -5,17 +5,18 @@ const Post = require('../models/Post');
 // Sort by cat
 exports.Poems = async (req, res, next) => {
 	req.query.categories = 'Poems';
-	// req.query.sort = 'Poems';
 	next();
 };
 exports.Main = async (req, res, next) => {
 	req.query.categories = 'main';
-	// req.query.sort = 'Poems';
 	next();
 };
 
 // !CREATE POSTrs
 exports.createPost = async (req, res) => {
+	let UserId = req.username;
+	console.log(UserId);
+
 	const newPost = new Post(req.body);
 	try {
 		const Posts = await newPost.save();
