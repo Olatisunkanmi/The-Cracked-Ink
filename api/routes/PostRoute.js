@@ -20,6 +20,10 @@ router
 
 router.route('/junk').get(postController.Archives);
 
+router.route('/:id/comments').post(postController.commentPost);
+
+router.route('/:id/comments').get(postController.getComments);
+
 router
 	.route('/:id')
 	.get(postController.getPost)
