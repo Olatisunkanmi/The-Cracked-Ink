@@ -162,3 +162,41 @@ exports.Archives = async (req, res) => {
 		});
 	}
 };
+
+exports.getComments = async (req, res) => {
+	const { id } = req.params;
+	try {
+		const post = await Post.findById(id);
+		res.status(200).json({
+			status: 'sucess',
+			data: post.comments,
+		});
+	} catch (error) {
+		res.status(400).json({
+			status: 'Fail',
+			message: 'error',
+		});
+	}
+};
+
+exports.commentPost = async (req, res) => {
+	const { id } = req.params;
+	const { comment } = req.body;
+
+	try {
+		const post = await Post.findById(id);
+		post.comments.push(comment);
+		await post.save();
+		res.status(200).json({
+			status: 'sucess',
+			data: {
+				Comments: post.comments,
+			},
+		});
+	} catch (error) {
+		res.status(400).json({
+			status: 'Fail',
+			message: 'error',
+		});
+	}
+};
